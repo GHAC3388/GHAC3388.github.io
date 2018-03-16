@@ -23,8 +23,8 @@
   -webkit-column-gap: 20px;
      -moz-column-gap: 20px;
           column-gap: 20px;
-  -webkit-column-rule: 1px solid #fff;
-     -moz-column-rule: 1px solid red;
+  -webkit-column-rule: 1px solid red;
+     -moz-column-rule: 1px solid #000000;
           column-rule: 1px solid #fff;
 
 }
