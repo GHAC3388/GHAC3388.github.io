@@ -1,82 +1,21 @@
 
-  body {
+body {
   	padding-left: 11em;
   	font-family: Georgia, "Times New Roman",
           Times, serif;
     	
     	background-color: #d8da3d; }
    
-    h1 {
+h1 {
     font-family: Helvetica, Geneva, Arial,
           SunSans-Regular, sans-serif;
           
-    color: red;}
+    color: red;
+    }
     
-    .multi_column {
-
-  -webkit-column-count: 3;
-     -moz-column-count: 3;
-          column-count: 3;
-  -webkit-column-width: 75px;
-     -moz-column-width: 75px;
-          column-width: 75px;
-  -webkit-column-gap: 20px;
-     -moz-column-gap: 20px;
-          column-gap: 20px;
-  -webkit-column-rule: 1px solid red;
-     -moz-column-rule: 1px solid #000000;
-          column-rule: 1px solid orange;
+.hyphenation {
+    
+    hyphens: auto;
 
 }
 
-
-/* Text-shadow and Skew CSS3 Transforms   */
-
-.bgrd {
-	width:700px; 
-	height:400px; 
-	background:#aaa; 
-	text-align:center;
-	border-radius:50px;
-
-}
-
-h1.skew {
-	font-family: 'times new roman', serif;
-	padding:0; margin:150px 0 0 150px;
-	position:relative;
-	color:#fff;
-	font-size: 100px;
-	text-shadow:
-		-1px -1px 0 #f8f8f8,
-		-2px -2px 0 #f0f0f0,
-		-3px -3px 0 #e8e8e8, 
-		-4px -4px 0 #e0e0e0,
-		-5px -5px 0 #d8d8d8,
-		-6px -6px 0 #d0d0d0,
-		-7px -7px 0 #c8c8c8;
-	transform-origin: bottom left;
-	transform: skewY(-15deg);
-	position: absolute;
-	z-index: 100;
-}
-
-.skew:before {
-	content:attr(title);
-	color:transparent;
-	position:absolute;
-	left:0; bottom:0;
-	text-shadow:
-		0 0 5px rgba(0,0,0,.25);
-		0 0 10px rgba(0,0,0,.2);
-		0 0 20px rgba(0,0,0,.15);
-		0 0 40px rgba(0,0,0,.1);
-	transform-origin: bottom left;
-	transform: skewX(60deg);
-	z-index:-1;
-}
-
-.word_wrap {
-	word-wrap: break-word;
-	width:200px;
-}
