@@ -17,7 +17,7 @@
   column-width: 75px;
   column-gap: 20px;
   -webkit- column-rule: 1px solid #fff;
-  -webkit- column-rule: 1px solid red;
+  -moz- column-rule: 1px solid red;
 }
 
 
