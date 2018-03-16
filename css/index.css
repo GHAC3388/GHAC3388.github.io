@@ -19,26 +19,6 @@
   column-rule: 1px solid #fff;
 }
 
-p {
-	position: relative;
-	display: inline-block;
-	padding: 1em;
-	margin: 2em;
-}
-
-p::before {
-	content: ''; /* To generate the box */
-	position: absolute;
-	top: 0; right: 0; bottom: 0; left: 0;
-	z-index: -1;
-	background: skyblue;
-	transform: perspective(4px) rotateX(1deg);
-}
-
-p.tab::before {
-	/* Tip by @krofdrakula */
-	border-radius: 10px 10px 0px 0px;
-}
 
 /* Text-shadow and Skew CSS3 Transforms   */
 
