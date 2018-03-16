@@ -11,3 +11,75 @@
           SunSans-Regular, sans-serif;
           
     color: red;}
+
+p {
+	position: relative;
+	display: inline-block;
+	padding: 1em;
+	margin: 2em;
+}
+
+p::before {
+	content: ''; /* To generate the box */
+	position: absolute;
+	top: 0; right: 0; bottom: 0; left: 0;
+	z-index: -1;
+	background: skyblue;
+	transform: perspective(4px) rotateX(1deg);
+}
+
+p.tab::before {
+	/* Tip by @krofdrakula */
+	border-radius: 10px 10px 0px 0px;
+}
+
+/* Text-shadow and Skew CSS3 Transforms   */
+
+.bgrd {
+	width:700px; 
+	height:400px; 
+	background:#aaa; 
+	text-align:center;
+	border-radius:50px;
+
+}
+
+h1.skew {
+	font-family: 'times new roman', serif;
+	padding:0; margin:150px 0 0 150px;
+	position:relative;
+	color:#fff;
+	font-size: 100px;
+	text-shadow:
+		-1px -1px 0 #f8f8f8,
+		-2px -2px 0 #f0f0f0,
+		-3px -3px 0 #e8e8e8, 
+		-4px -4px 0 #e0e0e0,
+		-5px -5px 0 #d8d8d8,
+		-6px -6px 0 #d0d0d0,
+		-7px -7px 0 #c8c8c8;
+	transform-origin: bottom left;
+	transform: skewY(-15deg);
+	position: absolute;
+	z-index: 100;
+}
+
+.skew:before {
+	content:attr(title);
+	color:transparent;
+	position:absolute;
+	left:0; bottom:0;
+	text-shadow:
+		0 0 5px rgba(0,0,0,.25);
+		0 0 10px rgba(0,0,0,.2);
+		0 0 20px rgba(0,0,0,.15);
+		0 0 40px rgba(0,0,0,.1);
+	transform-origin: bottom left;
+	transform: skewX(60deg);
+	z-index:-1;
+}
+
+.word_wrap {
+	word-wrap: break-word;
+	width:200px;
+}
