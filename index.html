@@ -8,6 +8,7 @@
   <script>
 	if (!Modernizr.geolocation) {
 		alert('Geolocation is NOT supported.');
+		window.location.href = 'https://google.com/maps';
 	} else {
 		alert('Geolocation is supported.');
 	}
