@@ -4,6 +4,14 @@
   <title>Assignment 2</title>
   <link rel="stylesheet" type="text/css" href="css/index.css">
   <script src="js/modernizr-custom.js"></script>
+  <script src="js/modernizr-geolocation.js"></script>
+  <script>
+  	if (Modernizr.geolcoation) {
+  		alert('Geolocation is supported.');
+  	} else {
+  		alert('Geolocation is NOT supported.');
+  	}
+  </script>
   <script src="js/prefixfree.min.js" type="application/javascript"></script>
   <script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
   
