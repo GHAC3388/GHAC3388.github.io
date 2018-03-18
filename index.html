@@ -6,10 +6,10 @@
   <script src="js/modernizr-custom.js"></script>
   <script src="js/modernizr-geolocation.js"></script>
   <script>
-  	if (Modernizr.geolcoation) {
-  		alert('Geolocation is supported.');
-  	} else {
+  	if (!Modernizr.geolcoation) {
   		alert('Geolocation is NOT supported.');
+  	} else {
+  		alert('Geolocation is supported.');
   	}
   </script>
   <script src="js/prefixfree.min.js" type="application/javascript"></script>
