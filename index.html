@@ -5,13 +5,7 @@
   <link rel="stylesheet" type="text/css" href="css/index.css">
   <script src="js/modernizr-custom.js"></script>
   <script src="js/modernizr-geolocation.js"></script>
-  <script>
-  	if (!Modernizr.geolcoation) {
-  		alert('Geolocation is NOT supported.');
-  	} else {
-  		alert('Geolocation is supported.');
-  	}
-  </script>
+  
   <script src="js/prefixfree.min.js" type="application/javascript"></script>
   <script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
   
@@ -36,6 +30,13 @@
 				<p>Modernizr:</p>
 				
 					<div>
+					<script>
+						if (!Modernizr.geolcoation) {
+							alert('Geolocation is NOT supported.');
+						} else {
+							alert('Geolocation is supported.');
+						}
+					</script>
 						 <div style="background-color:#bbb;">
 								
 								 <form action="/action_page" id="progess-form">
