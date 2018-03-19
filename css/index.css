@@ -20,8 +20,9 @@ div {
 	
 	}
 	
-.field {
-	width: 100%;
+form {
+	width: 200px;
+	hight: 50px;
 	}
     
 p {hyphens: auto;}
