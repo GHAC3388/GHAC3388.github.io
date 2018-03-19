@@ -8,7 +8,7 @@
   
   <!-- Q3 part 1 & 2. Added Modernizr Geolocation. Using it to check on its availiability and provide fallback -->
   <script> 
-	if (!Modernizr.geolocation) {
+	if (Modernizr.geolocation) {
 		alert('Geolocation is NOT supported. Page will be redirected to Google maps for location reference.');
 		window.location.href = 'https://google.com/maps';
 	} else {
