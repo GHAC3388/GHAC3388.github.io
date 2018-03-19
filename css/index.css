@@ -22,4 +22,10 @@ div {
     
 p {hyphens: auto;}
 
-
+.progress-wrap {
+	
+	text-align: center;
+	font-size: 10px:
+	color: white;
+	margin: 0 0 20px 0;
+	width: 100%;
