@@ -19,6 +19,10 @@ div {
 	border: black solid 1px;
 	
 	}
+	
+.field {
+	width: 150px;
+	}
     
 p {hyphens: auto;}
 
