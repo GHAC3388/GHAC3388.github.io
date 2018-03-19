@@ -5,7 +5,7 @@
   <link rel="stylesheet" type="text/css" href="css/index.css">
   <script src="js/modernizr-custom.js"></script>
   <script src="js/modernizr-geolocation.js"></script>
-  <script src="js/modernizr-emoji.js"></script>
+  
   <!-- Q3 part 1 & 2. Added Modernizr Geolocation. Using it to check on its availiability and provide fallback -->
   <script> 
 	if (!Modernizr.geolocation) {
@@ -15,13 +15,14 @@
 		alert('Geolocation is supported.');
 	}
 </script>
+<script src="js/modernizr-emoji.js"></script>
 <script>
 	if (!Modernizr.emoji) {
 		alert('Emoji characters are not supported with this browser.')
   	} else {
   		alert('Emoji characters are supported');
   	}
-  </script>
+</script>
   
   <script src="js/prefixfree.min.js" type="application/javascript"></script>
   <script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
