@@ -5,6 +5,7 @@
   <link rel="stylesheet" type="text/css" href="css/index.css">
   <script src="js/modernizr-custom.js"></script>
   <script src="js/modernizr-geolocation.js"></script>
+  <script> src="js/modernizr-emoji.js"></script>
   <!-- Q3 part 1 & 2. Added Modernizr Geolocation. Using it to check on its availiability and provide fallback -->
   <script> 
 	if (!Modernizr.geolocation) {
@@ -13,9 +14,16 @@
 	} else {
 		alert('Geolocation is supported.');
 	}
+	if (!Modernizr.emoji) {
+		alert('Emoji characters are not supported with this browser.')
+  	} else {
+  		alert('Emoji characters are supported');
+  	}
   </script>
+  
   <script src="js/prefixfree.min.js" type="application/javascript"></script>
   <script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
+  <script src="js/progress.js"></script>
   
 
 </head>
@@ -42,30 +50,40 @@
 					
 						 <div style="background-color:#bbb;">
 								
-								 <form action="/action_page" id="progess-form">
-								 	<div>
-								 		<progress max="100" value="20"></progress>
+								 <form action="#" class="progform" id="progess-form">
+								 	<div class="progress-wrap">
+								 		<progress max="100" value="0" id="progress"></progress>
 								 		<div class="progress-message" id="progress-message">Enter information</div>
 								 	</div>
-						
-									<label>E-mail:</label><br>
-									<input type="email" name="email" required><br>
-									<label>Personal URL:</label><br>
-									<input type="url" name="personalURL" required><br>
-									<label>Day of birth:</label><br>
-									<input type="date" name="bdtime" required><br>
-									<label>Gender:</label><br>
-
-									<input type="radio" name="gender" value="male" checked> Male<br>
-									<input type="radio" name="gender" value="female" > Female<br>
-									<br>
-									<label>Comments:</label><br>
-									<textarea class="form-control" rows="10" id="comment"></textarea>
-									<br><br>
-									<input type="checkbox" name="trueinput" required>*Required - Data entered are fictitious
-									<br><br>
-									<input type="submit" value="Submit">
+									<div class="field">
+										<label>E-mail:</label><br>
+										<input type="email" id="email" required="required">
+									</div>
+									<div class="field">
+										<label>Personal URL:</label><br>
+										<input type="url" id="personalURL" required="required">
+									</div>
+									<div class="field">
+										<label>Day of birth:</label><br>
+										<input type="date" id="bdtime" required="required">
+									</div>
+									<div class="field">
+										<label>Gender:</label><br>
+										<input type="radio" id="gender" value="male" checked> Male<br>
+										<input type="radio" id="gender" value="female" > Female<br>
+									</div>
+									<div class="field">
+										<label>Comments:</label><br>
+										<textarea class="form-control" rows="10" id="comment" required="required"></textarea>
+									</div>
+									<div class="field">
+										<input type="checkbox" id="trueinput" required="required">*Required - Data entered are fictitious
+										<br><br>
+									</div>
+									<div class="actions">
+									<input type="submit" value="Submit" class="button">
 									<input type="reset" value="Clear All">
+									</div>
 								</form>
 						  </div>
 						
