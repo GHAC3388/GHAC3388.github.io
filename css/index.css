@@ -41,7 +41,7 @@ h1, h2 {
 .pro-form {
   width: 350px;
   border-radius: 20px;
-  
+  @include background(linear-gradient(#268ad0, #59c1d4));
   padding: 2px 20px 20px 20px;
   .field {
     margin: 0 0 10px 0;
@@ -94,7 +94,7 @@ input[type='number'], {
   float: left;
   border: 0;
   padding: 12px 16px;
- 
+  @include background(linear-gradient(#323232, #272727));
   border: 1px solid #111;
   color: white !important;
   font-size: 16px;
