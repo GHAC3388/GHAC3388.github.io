@@ -45,9 +45,10 @@
 
                     infoWindow.setPosition(pos);
                     infoWindow.setContent('Location found.');
-                    alert("lat: " + lat + ",lng:" + lng)
+                    
                     infoWindow.open(map);
                     map.setCenter(pos);
+                    alert("lat: " + lat + ",lng:" + lng)
                   }, function() {
                     handleLocationError(true, infoWindow, map.getCenter());
                   });
