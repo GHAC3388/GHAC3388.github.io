@@ -42,7 +42,7 @@
           "<br>Longitude: " + position.coords.longitude;
       }
       </script>
-      <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+      <!-- <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
       <script>
             $.ajax({
               //url: "https://maps.googleapis.com/maps/api/geocode/json?latlng=40.714224,-73.961452&key=AIzaSyAECP2r3MZjWif-uS94qgGsecN97am61HU",
@@ -54,7 +54,7 @@
               }
               
             })
-          </script>
+          </script> -->
       <!-- <script>
             $.ajax({
               https://maps.googleapis.com/maps/api/geocode/json?latlng=40.714224,-73.961452&key=AIzaSyAECP2r3MZjWif-uS94qgGsecN97am61HU",
@@ -65,7 +65,7 @@
               
             })
           </script> -->
-       <!--      <div id="map"></div>
+            <div id="map"></div>
             <script>
               // Note: This example requires that you consent to location sharing when
               // prompted by your browser. If you see the error "The Geolocation service
@@ -114,7 +114,16 @@
             </script>
             <script async defer
             src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAECP2r3MZjWif-uS94qgGsecN97am61HU&callback=initMap">
-            
+            $.ajax({
+              
+              url: "https://maps.googleapis.com/maps/api/geocode/json?latlng="+pos+"&key=AIzaSyAECP2r3MZjWif-uS94qgGsecN97am61HU",
+              type: "GET",
+              success: function (data) {
+                console.log(data)
+                //latlng=40.714224,-73.961452&key=
+              }
+              
+            })
             </script> -->
             
   </body>
