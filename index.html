@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>Simple Map</title>
+    <title>Assignment 3</title>
     <meta name="viewport" content="initial-scale=1.0">
     <meta charset="utf-8">
     <style>
@@ -19,17 +19,12 @@
     </style>
   </head>
   <body>
-    <div id="map"></div>
-    <script>
-      var map;
-      function initMap() {
-        map = new google.maps.Map(document.getElementById('map'), {
-          center: {lat: -34.397, lng: 150.644},
-          zoom: 8
-        });
-      }
-    </script>
-    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAECP2r3MZjWif-uS94qgGsecN97am61HU&callback=initMap"
-    async defer></script>
+    <div>
+		<form action=map.html method="get">
+			Please enter your age:
+			<input type="number" name="age"/>
+			<input type="submit" value="Submit" />
+		</form>
+	</div>
   </body>
 </html>
