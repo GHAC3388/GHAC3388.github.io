@@ -1,116 +1,35 @@
-<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01//EN">
+<!DOCTYPE html>
 <html>
-<head>
-  <title>Assignment 2</title>
-  <link rel="stylesheet" type="text/css" href="css/index.css">
- <script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
-  <script src="js/modernizr-geolocation.js"></script>
-  
-  <!-- Q3 part 1 & 2. Added Modernizr Geolocation. Using it to check on its availiability and provide fallback -->
-  <script> 
-	if (!Modernizr.geolocation) {
-		alert('Geolocation is NOT supported. Page will be redirected to Google maps for location reference.');
-		window.location.href = 'https://google.com/maps';
-	} else {
-		alert('Geolocation is supported.');
-	}
-</script>
-<!--
-			<script src="js/modernizr-emoji.js"></script>
-			<script>
-				if (!Modernizr.emoji) {
-					alert('Emoji characters are not supported with this browser.')
-				} else {
-					alert('Emoji characters are supported');
-				}
-			</script>
-		--> 
-  <script src="js/prefixfree.min.js" type="application/javascript"></script>
-  <script src="js/modernizr-custom.js"></script>
-  
-  
-  
-
-</head>
-
-<body>
-<div>
-<h1>Mobile Compatible Web Programming</h1>
-	<h2>Assignment 3 due April 10, 2018</h2>
-		<h3>Part One: Using Geolocation and Maps</h3>
-		
-		
-			<div id="map"></div>
-			<script>
-			  var map;
-			  function initMap() {
-				map = new google.maps.Map(document.getElementById('map'), {
-				  center: {lat: -34.397, lng: 150.644},
-				  zoom: 10
-				});
-			  }
-			</script>
-			<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAECP2r3MZjWif-uS94qgGsecN97am61HU&callback=initMap"
-			async defer></script>
-			
-			
-</div>
-<div>
-	<h3>Part Two: Implementing Gestures with Hammer.js</h3>
-				<p>Modernizr formtype, geolocation and emoji checkers are embedded:</p>
-				
-					<div>
-					
-					
-						 <div style="background-color:#bbb;">
-								
-								 <form action="/action-page" id="progress">
-								 	
-								 		
-								 	
-									
-										<label>E-mail: (me@email.com)</label><br>
-										<input type="email" id="email" required><br>
-									
-										<label>Personal URL: (http://www.website.com)</label><br>
-										<input type="url" id="personalURL"  required><br>
-									
-										<label>Day of birth: (yyyy-mm-dd)</label><br>
-										<input type="date" id="bdtime"  required><br>
-									
-										<label>Gender:</label><br>
-										<input type="radio" name="gender" value="male" default> Male<br>
-										<input type="radio" name="gender" value="female" > Female<br>
-										
-									
-										<label>Comments:</label><br>
-										<textarea rows="10" id="comment" required></textarea><br><br>
-									
-										<input type="checkbox" id="trueinput" required>*Required - Data entered are fictitious
-										<br><br>
-									
-									<input type="submit" value="Submit" >
-									<input type="reset" value="Clear All">
-									
-								</form>
-						  </div>
-						
-					</div>
-				<br>
-</div>
-<div>
-	<h3>Part Three: Implementing Device Interaction API</h3>
-				
-</div>		
-
-<h3>Part Four:</h3>
-<p>CSS Media Queries:</p>
-<p>Scan QR code below to download and install the app.<p>
-<div>
-<img src="img/QRcode.png" alt="QRcode for CSS media queries app" >
-</div>
-<br>
-<p>by AC</p>
-
-</body>
+  <head>
+    <title>Simple Map</title>
+    <meta name="viewport" content="initial-scale=1.0">
+    <meta charset="utf-8">
+    <style>
+      /* Always set the map height explicitly to define the size of the div
+       * element that contains the map. */
+      #map {
+        height: 100%;
+      }
+      /* Optional: Makes the sample page fill the window. */
+      html, body {
+        height: 100%;
+        margin: 0;
+        padding: 0;
+      }
+    </style>
+  </head>
+  <body>
+    <div id="map"></div>
+    <script>
+      var map;
+      function initMap() {
+        map = new google.maps.Map(document.getElementById('map'), {
+          center: {lat: -34.397, lng: 150.644},
+          zoom: 8
+        });
+      }
+    </script>
+    <script src="https://maps.googleapis.com/maps/api/js?key=YOUR_API_KEY&callback=initMap"
+    async defer></script>
+  </body>
 </html>
