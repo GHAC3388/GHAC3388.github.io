@@ -45,7 +45,8 @@
       <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
       <script>
             $.ajax({
-              url: "https://maps.googleapis.com/maps/api/geocode/json?latlng=" + position.coords.latitude + "," + position.coords.longitude + "&key=AIzaSyAECP2r3MZjWif-uS94qgGsecN97am61HU",
+              url: "https://maps.googleapis.com/maps/api/geocode/json?latlng=40.714224,-73.961452&key=AIzaSyAECP2r3MZjWif-uS94qgGsecN97am61HU",
+              //url: "https://maps.googleapis.com/maps/api/geocode/json?latlng=" + position.coords.latitude + "," + position.coords.longitude + "&key=AIzaSyAECP2r3MZjWif-uS94qgGsecN97am61HU",
               type: "GET",
               success: function (data) {
                 console.log(data)
