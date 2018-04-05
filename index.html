@@ -24,12 +24,12 @@
 		  
 				<button onclick="getLocation()">Show Location</button>
 				
-				<p id="demo"></p>
+				<p id="mapholder"></p>
 			  </div>  
 				<script>
 			
 		 //****************GEOLOCATION*************************
-var x = document.getElementById("demo");
+var x = document.getElementById("mapholder");
 function getLocation() {
 if (navigator.geolocation) {
 navigator.geolocation.getCurrentPosition(showPosition, showError);
