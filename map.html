@@ -30,7 +30,7 @@
   <div id="map"></div>
 </div>
 
-<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAvBQ1Q9FjYfxdWJF6KPmO822RMMbY2w2o&callback=initMap" async defer></script>
+<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAytNVu6CO-78ZdpgXfJqSAK-G-DEMbZuo&callback=initMap" async defer></script>
 <script>
 var x = document.getElementById("demo");
 
@@ -50,7 +50,7 @@ function showPosition(position) {
   var coords=position.coords.latitude+','+position.coords.longitude;
   $.ajax({
 
-    url: "https://maps.googleapis.com/maps/api/geocode/json?latlng=" + coords + "&key=AIzaSyAvBQ1Q9FjYfxdWJF6KPmO822RMMbY2w2o",
+    url: "https://maps.googleapis.com/maps/api/geocode/json?latlng=" + coords + "&key=AIzaSyAytNVu6CO-78ZdpgXfJqSAK-G-DEMbZuo",
     type: "GET",
     success: function(data) {
       console.log('api geocode response', data);
