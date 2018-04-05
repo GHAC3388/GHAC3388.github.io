@@ -101,16 +101,11 @@
             </script>
             <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
             <script type="text/javascript">
-            if (navigator.geolocation) {
-                  navigator.geolocation.getCurrentPosition(function(position) {
-                    var pos = {
-                      lat: position.coords.latitude,
-                      lng: position.coords.longitude
-                    
+            
             alert("lat: " + pos['lat'] + "lng: " + pos['lng']);
             $.ajax({
               
-              url: "https://maps.googleapis.com/maps/api/geocode/json?latlng="+position.coords.lat+","+lng+"&key=AIzaSyAECP2r3MZjWif-uS94qgGsecN97am61HU",
+              url: "https://maps.googleapis.com/maps/api/geocode/json?latlng="+lat+","+lng+"&key=AIzaSyAECP2r3MZjWif-uS94qgGsecN97am61HU",
               type: "GET",
               success: function (data) {
                 console.log(data)
@@ -118,7 +113,7 @@
               }
               
             })
-          };
+                  
             </script>
             
   </body>
