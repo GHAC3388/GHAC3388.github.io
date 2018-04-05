@@ -22,7 +22,7 @@
     <div>
       <p>Click the button to get your coordinates.</p>
 
-      <button onclick="getLocation()">Try It</button>
+      <button onclick="getLocation()">Show Location</button>
       
       <p id="demo"></p>
     </div>  
@@ -112,7 +112,8 @@
                 infoWindow.open(map);
               }
             </script>
-            <script async defer
+            <!--async defer-->
+            <script 
             src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAECP2r3MZjWif-uS94qgGsecN97am61HU&callback=initMap">
             
             </script>
@@ -120,7 +121,7 @@
               
             $.ajax({
               
-              url: "https://maps.googleapis.com/maps/api/geocode/json?latlng="+pos+"&key=AIzaSyAECP2r3MZjWif-uS94qgGsecN97am61HU",
+              url: "https://maps.googleapis.com/maps/api/geocode/json?latlng="+lat+","+lng+"&key=AIzaSyAECP2r3MZjWif-uS94qgGsecN97am61HU",
               type: "GET",
               success: function (data) {
                 console.log(data)
