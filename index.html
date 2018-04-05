@@ -27,18 +27,7 @@
 				<p id="demo"></p>
 			  </div>  
 				<script>
-				var x = document.getElementById("demo");
-				
-				/* function getLocation() {
-					if (navigator.geolocation) {
-						navigator.geolocation.getCurrentPosition(showPosition);
-					} else { 
-						x.innerHTML = "Geolocation is not supported by this browser.";
-					}
-				} */
-				
-				
-				
+			
 		 //****************GEOLOCATION*************************
 var x = document.getElementById("demo");
 function getLocation() {
@@ -48,10 +37,10 @@ navigator.geolocation.getCurrentPosition(showPosition, showError);
 x.innerHTML = "Geolocation is not supported by this browser.";
 }
 }
-function showPosition(position) {
+/* function showPosition(position) {
 					x.innerHTML = "Latitude: " + position.coords.latitude + 
 					"<br>Longitude: " + position.coords.longitude;
-				} 
+				}  */
 
 function showPosition(position) {
 var latlon = position.coords.latitude + "," + position.coords.longitude;
@@ -59,6 +48,8 @@ img_url2 = "http://maps.googleapis.com/maps/api/staticmap?center="
 + latlon + "&zoom=14&size=400x300&sensor=false&maptype=roadmap&markers=color:blue%7Clabel:S%7C" + latlon + "";
 document.getElementById("mapholder").innerHTML = "<img src='" + img_url2 + "'>";
 }
+
+
 function showError(error) {
 var img_url = "http://maps.googleapis.com/maps/api/staticmap?center=43.663136,-79.395699&zoom=14&size=400x300&sensor=false&maptype=roadmap&markers=color:blue%7Clabel:S%7C43.663136,-79.395699";
 switch (error.code) {
