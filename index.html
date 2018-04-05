@@ -37,10 +37,7 @@ navigator.geolocation.getCurrentPosition(showPosition, showError);
 x.innerHTML = "Geolocation is not supported by this browser.";
 }
 }
-/* function showPosition(position) {
-					x.innerHTML = "Latitude: " + position.coords.latitude + 
-					"<br>Longitude: " + position.coords.longitude;
-				}  */
+
 
 function showPosition(position) {
 var latlon = position.coords.latitude + "," + position.coords.longitude;
@@ -76,7 +73,21 @@ break;
 	 
 	 </script> 
 
-
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+            <script type="text/javascript">
+            
+           
+            $.ajax({
+              
+              url: "https://maps.googleapis.com/maps/api/geocode/json?latlng="+latlon+"&key=AIzaSyAECP2r3MZjWif-uS94qgGsecN97am61HU",
+              type: "GET",
+              success: function (data) {
+                console.log(data)
+                //latlng=40.714224,-73.961452&key=
+              }
+              
+            })
+			</script>
     <!-- <div align = "center">
 		<form action = "map.html" method = "get">
 			Please enter your age:
