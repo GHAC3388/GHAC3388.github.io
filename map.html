@@ -101,7 +101,7 @@
             </script>
             <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
             <script type="text/javascript">
-            alert("pos: " + pos)
+            alert("lat: " + pos['lat'] + "lng: " + pos['lng']);
             $.ajax({
               
               url: "https://maps.googleapis.com/maps/api/geocode/json?latlng="+position.coords.lat+","+lng+"&key=AIzaSyAECP2r3MZjWif-uS94qgGsecN97am61HU",
