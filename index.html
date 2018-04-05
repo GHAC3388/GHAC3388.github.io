@@ -43,12 +43,19 @@
 		
 		function showPosition(position) {
 			var latlon = position.coords.latitude + "," + position.coords.longitude;
-			var img_url = "https://maps.googleapis.com/maps/api/staticmap?center="
-			+latlon+"&zoom=14&size=400x300&sensor=false&maptype=roadmap&markers=color:blue%7Clabel:S%7C&key=AIzaSyAytNVu6CO-78ZdpgXfJqSAK-G-DEMbZuo"+latlon+"";
+			var img_url = "https://maps.googleapis.com/maps/api/staticmap?center="+latlon+"&zoom=14&size=400x300&maptype=roadmap&markers=color:blue%7Clabel:S%7C&key=AIzaSyAytNVu6CO-78ZdpgXfJqSAK-G-DEMbZuo"+latlon+"";
 			document.getElementById("mapholder").innerHTML = "<img src='"+img_url+"'>";
 		}
 
 		
+		/* function showPosition(position) {
+var latlon = position.coords.latitude + "," + position.coords.longitude;
+img_url2 = "http://maps.googleapis.com/maps/api/staticmap?center="
++ latlon + "&zoom=14&size=400x300&sensor=false&maptype=roadmap&markers=color:blue%7Clabel:S%7C" + latlon + "";
+document.getElementById("mapholder").innerHTML = "<img src='" + img_url2 + "'>";
+} */
+
+
 		//To use this code on your website, get a free API key from Google.
 		//Read more at: https://www.w3schools.com/graphics/google_maps_basic.asp
 		
