@@ -9,6 +9,7 @@
        * element that contains the map. */
       #map {
         height: 100%;
+        width: 600px;
       }
       /* Optional: Makes the sample page fill the window. */
       html, body {
@@ -43,10 +44,11 @@ function getLocation() {
 }
 
 function showPosition(position) {
-  x.innerHTML = "Latitude: " + position.coords.latitude +
+  /* x.innerHTML = "Latitude: " + position.coords.latitude +
     "<br>Longitude: " + position.coords.longitude;
-
+ */
   var coords=position.coords.latitude+','+position.coords.longitude;
+  
   $.ajax({
 
     url: "https://maps.googleapis.com/maps/api/geocode/json?latlng=" + coords + "&key=AIzaSyAvBQ1Q9FjYfxdWJF6KPmO822RMMbY2w2o",
@@ -104,7 +106,7 @@ function handleLocationError(browserHasGeolocation, infoWindow, pos) {
 
 </script>
 <!-- <script src="/js/FindLoc.js"></script> -->
-<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDyZfWL7XwgnwJaEY0hcZC11efd4rwRYEw&callback=initMap" async defer></script>
+<!-- <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDyZfWL7XwgnwJaEY0hcZC11efd4rwRYEw&callback=initMap" async defer></script> -->
 
 
 </body>
