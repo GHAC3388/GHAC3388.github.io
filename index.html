@@ -34,6 +34,9 @@
 		<script>
 		var x = document.getElementById("demo");
 		
+		alert("latlon: " + latlon);
+
+		
 		function getLocation() {
 			if (navigator.geolocation) {
 				navigator.geolocation.getCurrentPosition(showPosition, showError);
@@ -83,7 +86,7 @@
 		   e.preventDefault();
             $.ajax({
               
-              url: "https://maps.googleapis.com/maps/api/geocode/json?latlng="+encodeURIComponent(latlon)+"&key=AIzaSyAytNVu6CO-78ZdpgXfJqSAK-G-DEMbZuo",
+              url: "https://maps.googleapis.com/maps/api/geocode/json?latlng="+latlon+"&key=AIzaSyAytNVu6CO-78ZdpgXfJqSAK-G-DEMbZuo",
               type: "GET",
               success: function (data) {
 				console.log(data);
