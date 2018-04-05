@@ -37,10 +37,7 @@
 					}
 				} */
 				
-				function showPosition(position) {
-					x.innerHTML = "Latitude: " + position.coords.latitude + 
-					"<br>Longitude: " + position.coords.longitude;
-				} 
+				
 				
 		 //****************GEOLOCATION*************************
 var x = document.getElementById("demo");
@@ -51,6 +48,11 @@ navigator.geolocation.getCurrentPosition(showPosition, showError);
 x.innerHTML = "Geolocation is not supported by this browser.";
 }
 }
+function showPosition(position) {
+					x.innerHTML = "Latitude: " + position.coords.latitude + 
+					"<br>Longitude: " + position.coords.longitude;
+				} 
+
 function showPosition(position) {
 var latlon = position.coords.latitude + "," + position.coords.longitude;
 img_url2 = "http://maps.googleapis.com/maps/api/staticmap?center="
