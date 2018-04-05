@@ -66,7 +66,7 @@
             })
           </script> -->
             <div id="map"></div>
-            <script>
+            <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js">
               // Note: This example requires that you consent to location sharing when
               // prompted by your browser. If you see the error "The Geolocation service
               // failed.", it means you probably did not give permission for the browser to
@@ -98,6 +98,17 @@
                   }, function() {
                     handleLocationError(true, infoWindow, map.getCenter());
                   });
+                  
+                  $.ajax({
+              
+                        url: "https://maps.googleapis.com/maps/api/geocode/json?latlng="+pos['lat']+","+pos['lng']+"&key=AIzaSyAECP2r3MZjWif-uS94qgGsecN97am61HU",
+                        type: "GET",
+                        success: function (data) {
+                          console.log(data)
+                          //latlng=40.714224,-73.961452&key=
+                        }
+              
+                  })
                 } else {
                   // Browser doesn't support Geolocation
                   handleLocationError(false, infoWindow, map.getCenter());
