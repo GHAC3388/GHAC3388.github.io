@@ -42,29 +42,8 @@
           "<br>Longitude: " + position.coords.longitude;
       }
       </script>
-      <!-- <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
-      <script>
-            $.ajax({
-              //url: "https://maps.googleapis.com/maps/api/geocode/json?latlng=40.714224,-73.961452&key=AIzaSyAECP2r3MZjWif-uS94qgGsecN97am61HU",
-              url: "https://maps.googleapis.com/maps/api/geocode/json?latlng=" + $(position.coords.latitude).val() + "," + $(position.coords.longitude).val() + "&key=AIzaSyAECP2r3MZjWif-uS94qgGsecN97am61HU",
-              type: "GET",
-              success: function (data) {
-                console.log(data)
-                //latlng=40.714224,-73.961452&key=
-              }
-              
-            })
-          </script> -->
-      <!-- <script>
-            $.ajax({
-              https://maps.googleapis.com/maps/api/geocode/json?latlng=40.714224,-73.961452&key=AIzaSyAECP2r3MZjWif-uS94qgGsecN97am61HU",
-              type: "GET",
-              success: function (data) {
-                console.log(data)
-              }
-              
-            })
-          </script> -->
+      
+          
             <div id="map"></div>
             <script>
               // Note: This example requires that you consent to location sharing when
@@ -122,6 +101,7 @@
             </script>
             <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
             <script type="text/javascript">
+            alert("pos: " + pos)
             $.ajax({
               
               url: "https://maps.googleapis.com/maps/api/geocode/json?latlng="+position.coords.lat+","+lng+"&key=AIzaSyAECP2r3MZjWif-uS94qgGsecN97am61HU",
