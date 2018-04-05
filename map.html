@@ -123,7 +123,7 @@
             <script type="text/javascript">
             $.ajax({
               
-              url: "https://maps.googleapis.com/maps/api/geocode/json?latlng="+pos['lat']+","+pos['lng']+"&key=AIzaSyAECP2r3MZjWif-uS94qgGsecN97am61HU",
+              url: "https://maps.googleapis.com/maps/api/geocode/json?latlng="+lat+","+'lng'+"&key=AIzaSyAECP2r3MZjWif-uS94qgGsecN97am61HU",
               type: "GET",
               success: function (data) {
                 console.log(data)
