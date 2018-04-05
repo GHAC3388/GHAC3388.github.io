@@ -16,7 +16,8 @@
         margin: 0;
         padding: 0;
       }
-    </style>
+	</style>
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
   </head>
   <body>
 
@@ -26,7 +27,7 @@
 		
 		<p id="demo">Click the button to get your position.</p>
 		
-		<button onclick="getLocation()">Try It</button>
+		<button onclick="getLocation()" id="find-location">Try It</button>
 		
 		<div id="mapholder"></div>
 		
@@ -74,20 +75,41 @@
 		
 		
 
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+
             <script type="text/javascript">
             
+			$("#find-location").click(function (e) {
            
+		   e.preventDefault();
             $.ajax({
               
-              url: "https://maps.googleapis.com/maps/api/geocode/json?latlng="+latlon+"&key=AIzaSyAytNVu6CO-78ZdpgXfJqSAK-G-DEMbZuo",
+              url: "https://maps.googleapis.com/maps/api/geocode/json?latlng="+encodeURIComponent(latlon)+"&key=AIzaSyAytNVu6CO-78ZdpgXfJqSAK-G-DEMbZuo",
               type: "GET",
               success: function (data) {
-                console.log(data)
+				console.log(data);
+                
+                if (data["status"] != "OK") {
+                    
+                    $("#message").html('<div class="alert alert-warning" role="alert">Postcode could not be found - please try again.</div>');
+                    
+                } else {
+                
+                $.each(data["results"][0]["address_components"], function (key, value) {
+                    
+                    if (value["types"][0] == "postal_code") {
+                        
+                    $("#message").html('<div class="alert alert-success" role="alert"><strong>Postcode found!</strong> The postcode is ' + value["long_name"] + '.</div>');
+                    
+                    }
+                    
+                })
+                
+                }
                 
               }
               
             })
+			})
 </script>
     <!-- <div align = "center">
 		<form action = "map.html" method = "get">
