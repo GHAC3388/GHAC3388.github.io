@@ -25,7 +25,9 @@
 <div>
   <p>Click the button below to get your coordinates.</p>
 
-  <button onclick="getLocation()" id="action">Show Location</button>
+  <!-- onclick="getLocation()" -->
+
+  <button  id="action">Show Location</button>
 <div><p id="demo"></p></div>
   
 
@@ -43,6 +45,7 @@ function getLocation() {
   if (navigator.geolocation) {
     navigator.geolocation.getCurrentPosition(showPosition);
     x.innerHTML = 'location found';
+    src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDyZfWL7XwgnwJaEY0hcZC11efd4rwRYEw&callback=initMap"
   } else {
     x.innerHTML = "Geolocation is not supported by this browser.";
   }
@@ -109,12 +112,12 @@ function handleLocationError(browserHasGeolocation, infoWindow, pos) {
   infoWindow.open(map);
 }
 
-function mapDisplay() {
+/* function mapDisplay() {
   src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDyZfWL7XwgnwJaEY0hcZC11efd4rwRYEw&callback=initMap"
 }
-
+ */
 $(function() {
-    $('#action').click(mapDisplay);
+    $('#action').click(getLocation);
 });
 </script>
 <!-- <script src="/js/FindLoc.js"></script> -->
