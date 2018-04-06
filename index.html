@@ -33,7 +33,6 @@
   
 </div>
 
-<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDyZfWL7XwgnwJaEY0hcZC11efd4rwRYEw&callback=initMap" async defer  type="text/javascript"></script>
 
 
 <script>
@@ -43,6 +42,7 @@ function getLocation() {
   x.innerHTML = 'getting location';
   if (navigator.geolocation) {
     navigator.geolocation.getCurrentPosition(showPosition);
+
   } else {
     x.innerHTML = "Geolocation is not supported by this browser.";
   }
@@ -111,6 +111,7 @@ function handleLocationError(browserHasGeolocation, infoWindow, pos) {
 
 </script>
 <!-- <script src="/js/FindLoc.js"></script> -->
+<script  src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDyZfWL7XwgnwJaEY0hcZC11efd4rwRYEw&callback=initMap" async defer ></script>
 
 </body>
 </html>
