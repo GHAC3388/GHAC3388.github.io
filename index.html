@@ -45,7 +45,7 @@ function getLocation() {
   if (navigator.geolocation) {
     navigator.geolocation.getCurrentPosition(showPosition);
     x.innerHTML = 'location found';
-    URL = "https://maps.googleapis.com/maps/api/js?key=AIzaSyDyZfWL7XwgnwJaEY0hcZC11efd4rwRYEw&callback=initMap"
+    url: "https://maps.googleapis.com/maps/api/js?key=AIzaSyDyZfWL7XwgnwJaEY0hcZC11efd4rwRYEw&callback=initMap"
   } else {
     x.innerHTML = "Geolocation is not supported by this browser.";
   }
