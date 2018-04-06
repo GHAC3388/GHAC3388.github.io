@@ -61,7 +61,14 @@ function showPosition(position) {
     url: "https://maps.googleapis.com/maps/api/geocode/json?latlng=" + coords + "&key=AIzaSyAvBQ1Q9FjYfxdWJF6KPmO822RMMbY2w2o",
     type: "GET",
     success: function(data) {
-      console.log('api geocode response', data);
+      //console.log('api geocode response', data);
+      $.each(data["results"][8]["address_components"], function(key, value) {
+        if (value["types"][0] == "administrative_area_level_1") {
+          alert(value["long_name"])
+        }
+
+      })
+
     }
   });
 }
