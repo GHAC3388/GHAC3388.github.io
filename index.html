@@ -45,7 +45,6 @@ function getLocation() {
   if (navigator.geolocation) {
     navigator.geolocation.getCurrentPosition(showPosition);
     x.innerHTML = 'location found';
-    url: "https://maps.googleapis.com/maps/api/js?key=AIzaSyDyZfWL7XwgnwJaEY0hcZC11efd4rwRYEw&callback=initMap"
   } else {
     x.innerHTML = "Geolocation is not supported by this browser.";
   }
@@ -117,8 +116,7 @@ function handleLocationError(browserHasGeolocation, infoWindow, pos) {
 }
  */
 $(function() {
-    $('#action').click(getLocation);
-    src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDyZfWL7XwgnwJaEY0hcZC11efd4rwRYEw&callback=initMap"
+    $('#action').click(initMap);
 });
 </script>
 <!-- <script src="/js/FindLoc.js"></script> -->
