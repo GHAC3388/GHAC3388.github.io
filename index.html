@@ -25,17 +25,18 @@
 <div>
   <p>Click the button below to get your coordinates.</p>
 
-  <button onclick="getLocation()">Show Location</button>
+  <button onclick="showMap()">Show Location</button>
 
   <div><p id="demo"></p></div>
 
-  <div id="map"></div>
+  <div id="map" style="display:none;" ></div>
   
 </div>
 
 
 
 <script>
+
 var x = document.getElementById("demo");
 
 function getLocation() {
@@ -43,6 +44,7 @@ function getLocation() {
   if (navigator.geolocation) {
     navigator.geolocation.getCurrentPosition(showPosition);
     x.innerHTML = 'location found';
+    
   } else {
     x.innerHTML = "Geolocation is not supported by this browser.";
   }
@@ -109,9 +111,14 @@ function handleLocationError(browserHasGeolocation, infoWindow, pos) {
   infoWindow.open(map);
 }
 
+function showMap() {
+  document.getElementById('map').style.display = "block";
+  getLocation();
+}
+
 </script>
 
-<script  src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDyZfWL7XwgnwJaEY0hcZC11efd4rwRYEw&callback=initMap" async defer ></script>
+<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDyZfWL7XwgnwJaEY0hcZC11efd4rwRYEw&callback=initMap" async defer ></script>
 
 </body>
 </html>
