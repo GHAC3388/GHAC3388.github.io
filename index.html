@@ -62,7 +62,7 @@ function showPosition(position) {
     type: "GET",
     success: function(data) {
       //console.log('api geocode response', data);
-      $.each(data["results"][8]["address_components"], function(key, value) {
+      $.each(data["results"][0]["address_components"], function(key, value) {
         if (value["types"][0] == "administrative_area_level_1") {
           alert(value["long_name"])
         }
@@ -70,7 +70,7 @@ function showPosition(position) {
       })
 
     }
-  });
+  })
 }
 
 var map, infoWindow;
