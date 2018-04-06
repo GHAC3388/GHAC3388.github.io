@@ -25,9 +25,7 @@
 <div>
   <p>Click the button below to get your coordinates.</p>
 
-  <!-- onclick="getLocation()" -->
-
-  <button  id="action">Show Location</button>
+  <button onclick="getLocation()" id="action">Show Location</button>
 <div><p id="demo"></p></div>
   
 
@@ -111,15 +109,8 @@ function handleLocationError(browserHasGeolocation, infoWindow, pos) {
   infoWindow.open(map);
 }
 
-/* function mapDisplay() {
-  src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDyZfWL7XwgnwJaEY0hcZC11efd4rwRYEw&callback=initMap"
-}
- */
-$(function() {
-    $('#action').click(initMap);
-});
 </script>
-<!-- <script src="/js/FindLoc.js"></script> -->
+
 <script  src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDyZfWL7XwgnwJaEY0hcZC11efd4rwRYEw&callback=initMap" async defer ></script>
 
 </body>
