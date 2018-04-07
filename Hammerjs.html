@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Hammerjs</title>
+    <meta name="viewport" content="initial-scale=1.0, user-scalable=no">
+    <meta charset="utf-8">
+    <script src="hammer.min.js" type="text/javascript"></script>
+    <style>
+      /* Always set the map height explicitly to define the size of the div
+       * element that contains the map. */
+      #map {
+        height: 100%;
+      }
+      /* Optional: Makes the sample page fill the window. */
+      html, body {
+        height: 100%;
+        margin: 0;
+        padding: 0;
+      }
+    </style>
+  </head>
+  <body>
+    <div id="something"><h1>Something</h1></div>
+    <script type="text/javascript">
+      var element = document.getElementById('something');
+        Hammer(element).on("swipe", function(event) {
+          alert("swipe!");
+        });
+        Hammer(element).on("tap", function(event) {
+          alert("tap!");
+        });
+    
+    </script>
+  </body>
+</html>
