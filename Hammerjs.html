@@ -8,74 +8,53 @@
     <style>
       /* Always set the map height explicitly to define the size of the div
        * element that contains the map. */
-       body {
-    overflow:hidden;
-    height: 100%;
-}
-.colorContainer {
-    position: relative;
-    padding:0 2000px;
-    width: 400px;
-    border: 1px solid;
-    margin-top: 25px;
-}
-.color{
-    position: relative;
-    left: 50px;
-	width:50px;
-    height:50px;
-	cursor:pointer;
-}
-#red .color {
-    background: red;
-}
+      #map {
+        height: 100%;
+      }
+      /* Optional: Makes the sample page fill the window. */
+      html, body {
+        height: 100%;
+        margin: 0;
+        padding: 0;
+        
+      }
 
-#blue .color {
-    background: blue;
+      #myElement {
+  background: silver;
+  height: 300px;
+  text-align: center;
+  font: 30px/300px Helvetica, Arial, sans-serif;
 }
-
-      
     </style>
   </head>
   <body>
-      <h3>swipe</h3>
-      <div id="red" class="colorContainer">
-          <div class="color redColor"></div>
-      </div>
+      <div id="myElement"></div>
       
-      <h3>drag</h3>
-      <div id="blue" class="colorContainer">
-          <div class="color redColor"></div>
-      </div>
-      
-      <h2 id="event"></h2>
+      <div><h2 id="event">I'll turn blue if swiped</h2></div>
     <script type="text/javascript">
-      $(function(){  
-    var red = document.getElementById("red"),
-        blue = document.getElementById("blue");
+      var element = document.getElementById('something');
+        Hammer(element).on("swipe", function(event) {
+          document.getElementById('color-change').style.color = "blue";
+        });
+        
     
-    //Swipe
-    Hammer(red).on("swipeleft", function() {
-        $(this).find(".color").animate({left: "-=100"}, 500);
-        $("#event").text("swipe left");
-    });
-    
-    Hammer(red).on("swiperight", function() {
-        $(this).find(".color").animate({left: "+=100"}, 500);
-        $("#event").text("swipe right");
-    });
-    
-    // Drag
-    Hammer(blue).on("dragleft", function() {
-        $(this).find(".color").animate({left: "-=100"}, 500);
-        $("#event").text("drag left");
-    });
-    
-    Hammer(blue).on("dragright", function() {
-        $(this).find(".color").animate({left: "+=100"}, 500);
-        $("#event").text("drag right");
-    });
+
+        var myElement = document.getElementById('myElement');
+
+// create a simple instance
+// by default, it only adds horizontal recognizers
+var mc = new Hammer(myElement);
+
+// let the pan gesture support all directions.
+// this will block the vertical scrolling on a touch-device while on the element
+mc.get('pan').set({ direction: Hammer.DIRECTION_ALL });
+
+// listen to events...
+mc.on("panleft panright panup pandown tap press", function(ev) {
+    myElement.textContent = ev.type +" gesture detected.";
 });
+
+
     </script>
   </body>
 </html>
