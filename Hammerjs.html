@@ -8,21 +8,26 @@
     <style>
       /* Always set the map height explicitly to define the size of the div
        * element that contains the map. */
-      
+      #turn-color {
+        width: 200px;
+        height: 200px;
+        background-color: black;
+      }
 
       
     </style>
   </head>
   <body>
       
-      
-      <div><h2 id="turn-blue" align="center">I'll turn blue if panned</h2></div>
+      <div><h1>Question 2: Hammer.js Implementation</h1></div>
+      <div id="turn-color" align="center"></div>
+      <div><h3>Cube turns blue when panned, green when pressed</h3></div>
       <div>
         Click Button to reset.
         <input type="button" value="Reset." onclick='resetPage()'/>
       </div>
     <script type="text/javascript">
-      var element = document.getElementById('turn-blue');
+      var element = document.getElementById('turn-color');
         Hammer(element).on("pan", function(event) {
           element.style.color = "blue";
         });
