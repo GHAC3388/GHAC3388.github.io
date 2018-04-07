@@ -16,6 +16,7 @@
         height: 100%;
         margin: 0;
         padding: 0;
+        
       }
     </style>
   </head>
@@ -24,10 +25,10 @@
     <script type="text/javascript">
       var element = document.getElementById('something');
         Hammer(element).on("swipe", function(event) {
-          alert("swipe!");
+          document.getElementById('h1').style.color = "blue";
         });
-        Hammer(element).on("tap", function(event) {
-          alert("tap!");
+        Hammer(element).on("rotate", function(event) {
+          document.getElementById('h1').style.color = "green";
         });
     
     </script>
