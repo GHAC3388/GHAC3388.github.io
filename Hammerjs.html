@@ -21,7 +21,7 @@
       
       <div><h1>Question 2: Hammer.js Implementation</h1></div>
       <div id="turn-color"></div>
-      <div><h3>Cube turns blue when panned, green when pinched</h3></div>
+      <div><h3>Cube turns blue when panned, green when swiped</h3></div>
       <div>
         Click Button to reset.
         <input type="button" value="Reset." onclick='resetPage()'/>
@@ -31,8 +31,8 @@
         Hammer(element).on("pan", function(event) {
           element.style.backgroundColor = "blue";
         });
-        hammertime.get('pinch').set({ enable: true })
-        Hammer(element).on("pinch", function(event) {
+       
+        Hammer(element).on("swipe", function(event) {
           element.style.backgroundColor = "green";
         });
         
