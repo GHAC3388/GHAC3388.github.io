@@ -18,6 +18,8 @@
         padding: 0;
         
       }
+
+      
     </style>
   </head>
   <body>
@@ -27,7 +29,7 @@
         Hammer(element).on("swipe", function(event) {
           document.getElementById('color-change').style.color = "blue";
         });
-        Hammer(element).on("rotate", function(event) {
+        Hammer(element).on("pan", function(event) {
           document.getElementById('color-change').style.color = "green";
         });
     
