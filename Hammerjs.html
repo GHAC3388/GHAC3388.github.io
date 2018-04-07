@@ -8,51 +8,22 @@
     <style>
       /* Always set the map height explicitly to define the size of the div
        * element that contains the map. */
-      #map {
-        height: 100%;
-      }
-      /* Optional: Makes the sample page fill the window. */
-      html, body {
-        height: 100%;
-        margin: 0;
-        padding: 0;
-        
-      }
+      
 
-      #myElement {
-  background: silver;
-  height: 300px;
-  text-align: center;
-  font: 30px/300px Helvetica, Arial, sans-serif;
-}
+      
     </style>
   </head>
   <body>
-      <div id="myElement"></div>
       
-      <div><h2 id="turn-blue">I'll turn blue if swiped</h2></div>
+      
+      <div><h2 id="turn-blue">I'll turn blue if panned</h2></div>
     <script type="text/javascript">
       var element = document.getElementById('turn-blue');
-        Hammer(element).on("swipe", function(event) {
-          document.getElementById('turn-blue').style.color = "blue";
+        Hammer(element).on("pan", function(event) {
+          element.style.color = "blue";
         });
         
     
-
-        var myElement = document.getElementById('myElement');
-
-// create a simple instance
-// by default, it only adds horizontal recognizers
-var mc = new Hammer(myElement);
-
-// let the pan gesture support all directions.
-// this will block the vertical scrolling on a touch-device while on the element
-mc.get('pan').set({ direction: Hammer.DIRECTION_ALL });
-
-// listen to events...
-mc.on("panleft panright panup pandown tap press", function(ev) {
-    myElement.textContent = ev.type +" gesture detected.";
-});
 
 
     </script>
