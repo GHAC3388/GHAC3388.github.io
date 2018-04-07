@@ -17,15 +17,23 @@
       
       
       <div><h2 id="turn-blue" align="center">I'll turn blue if panned</h2></div>
+      <div>
+        <h3>Click Button to reset.</h3>
+        <p><input type="button" value="Reset." onclick='resetPage()'/></p>
+      </div>
     <script type="text/javascript">
       var element = document.getElementById('turn-blue');
         Hammer(element).on("pan", function(event) {
           element.style.color = "blue";
         });
         
-    
-
-
+        function resetPage(){
+		
+		        location.reload();
+					
+	      }
+        
+      
     </script>
   </body>
 </html>
