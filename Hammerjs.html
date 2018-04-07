@@ -30,11 +30,11 @@
   <body>
       <div id="myElement"></div>
       
-      <div><h2 id="event">I'll turn blue if swiped</h2></div>
+      <div><h2 id="turn-blue">I'll turn blue if swiped</h2></div>
     <script type="text/javascript">
-      var element = document.getElementById('something');
+      var element = document.getElementById('turn-blue');
         Hammer(element).on("swipe", function(event) {
-          document.getElementById('color-change').style.color = "blue";
+          document.getElementById('turn-blue').style.color = "blue";
         });
         
     
