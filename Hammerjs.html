@@ -26,6 +26,9 @@
         Hammer(element).on("pan", function(event) {
           element.style.color = "blue";
         });
+        Hammer(element).on("press", function(event) {
+          element.style.color = "green";
+        });
         
         function resetPage() {
 		
