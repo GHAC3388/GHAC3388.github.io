@@ -8,31 +8,74 @@
     <style>
       /* Always set the map height explicitly to define the size of the div
        * element that contains the map. */
-      #map {
-        height: 100%;
-      }
-      /* Optional: Makes the sample page fill the window. */
-      html, body {
-        height: 100%;
-        margin: 0;
-        padding: 0;
-        
-      }
+       body {
+    overflow:hidden;
+    height: 100%;
+}
+.colorContainer {
+    position: relative;
+    padding:0 200px;
+    width: 100%;
+    border: 1px solid;
+    margin-top: 25px;
+}
+.color{
+    position: relative;
+    left: 100px;
+	width:100px;
+    height:100px;
+	cursor:pointer;
+}
+#red .color {
+    background: red;
+}
+
+#blue .color {
+    background: blue;
+}
 
       
     </style>
   </head>
   <body>
-    <div id="something"><h1 id="color-change">Something</h1></div>
+      <h3>swipe</h3>
+      <div id="red" class="colorContainer">
+          <div class="color redColor"></div>
+      </div>
+      
+      <h3>drag</h3>
+      <div id="blue" class="colorContainer">
+          <div class="color redColor"></div>
+      </div>
+      
+      <h2 id="event"></h2>
     <script type="text/javascript">
-      var element = document.getElementById('something');
-        Hammer(element).on("swipe", function(event) {
-          document.getElementById('color-change').style.color = "blue";
-        });
-        Hammer(element).on("pan", function(event) {
-          document.getElementById('color-change').style.color = "green";
-        });
+      $(function(){  
+    var red = document.getElementById("red"),
+        blue = document.getElementById("blue");
     
+    //Swipe
+    Hammer(red).on("swipeleft", function() {
+        $(this).find(".color").animate({left: "-=100"}, 500);
+        $("#event").text("swipe left");
+    });
+    
+    Hammer(red).on("swiperight", function() {
+        $(this).find(".color").animate({left: "+=100"}, 500);
+        $("#event").text("swipe right");
+    });
+    
+    // Drag
+    Hammer(blue).on("dragleft", function() {
+        $(this).find(".color").animate({left: "-=100"}, 500);
+        $("#event").text("drag left");
+    });
+    
+    Hammer(blue).on("dragright", function() {
+        $(this).find(".color").animate({left: "+=100"}, 500);
+        $("#event").text("drag right");
+    });
+});
     </script>
   </body>
 </html>
