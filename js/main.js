@@ -17,6 +17,4 @@ ourRequest.onload = function() {
 
 };
 
-
-
 ourRequest.send();
