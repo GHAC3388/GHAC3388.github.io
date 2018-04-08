@@ -1,12 +1,13 @@
 
 var btn = document.getElementById("btn");
 var animalContainer = document.getElementById("animal-info")
+var pageCounter = 1;
 
 btn.addEventListener("click", function() {
 
 var ourRequest = new XMLHttpRequest();
 //where to do get or post data
-ourRequest.open('GET', 'https://learnwebcode.github.io/json-example/animals-1.json');
+ourRequest.open('GET', 'https://learnwebcode.github.io/json-example/animals-' + pageCounter + '.json');
 //what to do after established
 ourRequest.onload = function() {
    // console.log(ourRequest.responseText) <-- for checking in console
@@ -23,7 +24,7 @@ ourRequest.onload = function() {
 };
 
 ourRequest.send();
-
+pageCounter++;
 });
 
 //function for adding HTML to the page only
