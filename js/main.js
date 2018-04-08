@@ -7,11 +7,11 @@ ourRequest.onload = function() {
 
    //save retrieved data into a variable
 
-   var ourData = ourRequest.responseText
+   var ourData = ourRequest.responseText;
 
    //if only wants to log out 1st object from the array
 
-   console.log(ourData[0])
+   console.log(ourData[0]);
 
 };
 
