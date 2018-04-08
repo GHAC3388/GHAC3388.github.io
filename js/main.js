@@ -10,6 +10,8 @@ var ourRequest = new XMLHttpRequest();
 ourRequest.open('GET', 'https://learnwebcode.github.io/json-example/animals-' + pageCounter + '.json');
 //what to do after established
 ourRequest.onload = function() {
+
+    if (ourRequest.status >= 200 && ourRequest.status < 400) {
    // console.log(ourRequest.responseText) <-- for checking in console
 
    //save retrieved data into a variable, "ourRequest.responseText" treats data as String from the site
@@ -21,7 +23,14 @@ ourRequest.onload = function() {
     //below the requested URL will pass thru the JSON filter 
     var ourData = JSON.parse(ourRequest.responseText);
     renderHTML(ourData);
+    } else {
+        console.log("We connected to the server, but it returned an error.");
+    }
 };
+
+ourRequest.onerror = function() {
+    console.log("Connection error");
+}
 
 ourRequest.send();
 pageCounter++;
