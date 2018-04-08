@@ -25,6 +25,9 @@ ourRequest.onload = function() {
 
 ourRequest.send();
 pageCounter++;
+if (pageCounter > 3) {
+    btn.classList.add("hide-me");
+}
 });
 
 //function for adding HTML to the page only
