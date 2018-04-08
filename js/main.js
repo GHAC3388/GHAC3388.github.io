@@ -1,5 +1,6 @@
 
 var btn = document.getElementById("btn");
+var animalContainer = document.getElementById("animal-info")
 
 btn.addEventListener("click", function() {
 
@@ -13,15 +14,20 @@ ourRequest.onload = function() {
    //save retrieved data into a variable, "ourRequest.responseText" treats data as String from the site
     //var ourData = ourRequest.responseText;
 
+    //if only wants to log out 1st object from the array to the console
+    //console.log(ourData[0]);
+
     //below the requested URL will pass thru the JSON filter 
     var ourData = JSON.parse(ourRequest.responseText);
-
-   //if only wants to log out 1st object from the array
-
-   console.log(ourData[0]);
-
+    renderHTML(ourData);
 };
 
 ourRequest.send();
 
 });
+
+//function for adding HTML to the page only
+
+function renderHTML(data) {
+    animalContainer.insertAdjacentHTML('beforeend', 'testing123');    
+};
