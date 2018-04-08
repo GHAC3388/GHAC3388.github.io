@@ -29,5 +29,6 @@ ourRequest.send();
 //function for adding HTML to the page only
 
 function renderHTML(data) {
-    animalContainer.insertAdjacentHTML('beforeend', 'testing123');    
+    var htmlString = "this is a test"
+    animalContainer.insertAdjacentHTML('beforeend', htmlString);    
 };
