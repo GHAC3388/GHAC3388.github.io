@@ -97,7 +97,7 @@ function initMap() {
       infoWindow.setPosition(pos);
 
       infoWindow.setContent('Location found.');
-      alert(lat,log);
+      alert(pos[lat],pos[log]);
 
       infoWindow.open(map);
       map.setCenter(pos);
