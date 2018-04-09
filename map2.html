@@ -10,43 +10,27 @@
      
     </style>
     <script>
-      
-        (function () {
-            let batterySupported = document.getElementById("battery-supported"),
-                batteryLevel = document.getElementById("battery-level"),
-                chargingStatus = document.getElementById("charging-status"),
-                batteryCharged = document.getElementById("battery-charged"),
-                batteryDischarged = document.getElementById("battery-discharged");
+        window.addEventListener("load", function() {
+          var battery = navigator.battery || navigator.mozBattery;
     
-            let success = function (battery) {
-                if (battery) {
-                    function setStatus () {
-                        console.log("Set status");
-                        batteryLevel.innerHTML = Math.round(battery.level * 100) + "%";
-                        chargingStatus.innerHTML = (battery.charging)? "" : "not ";
-                        batteryCharged.innerHTML = (battery.chargingTime == "infinity")? "Infinity" : parseInt(battery.chargingTime / 60, 10);
-                        batteryDischarged.innerHTML = (battery.dischargingTime == "infinity")? "Infinity" : parseInt(battery.dischargingTime / 60, 10);
-                    }
-                    setStatus();
+          function displayBatteryStats() {
+            document.getElementById("charging").textContent = (battery.charging) ? "charging" : "not charging";
+            document.getElementById("chargingtime").textContent = battery.chargingTime;
+            document.getElementById("dischargingtime").textContent = battery.dischargingTime;
+            document.getElementById("level").textContent = battery.level * 100;
+          }
     
-                    battery.addEventListener("levelchange", setStatus, false);
-                    battery.addEventListener("chargingchange", setStatus, false);
-                    battery.addEventListener("chargingtimechange", setStatus, false);
-                    battery.addEventListener("dischargingtimechange", setStatus, false);
-                    } else {
-                    throw new Error('Battery API not supported');
-                    }
-            };
-    
-            let noGood = function (error) {
-                batterySupported.innerHTML = error.message;
-            };
-    
-            navigator.getBattery()
-            .then(success)
-            .catch(noGood)
-        })();
-    </script>
+          if (battery) {
+            displayBatteryStats();
+            battery.addEventListener("chargingchange", displayBatteryStats, false);
+            battery.addEventListener("chargingtimechange", displayBatteryStats, false);
+            battery.addEventListener("dischargingtimechange", displayBatteryStats, false);
+            battery.addEventListener("levelchange", displayBatteryStats, false);
+          } else {
+            document.getElementById("stats").textContent = "Sorry, your browser does not support the Battery Status API";
+          }
+        }, false);
+      </script>
   </head>
 <body>
 <div>
@@ -54,12 +38,12 @@
 
         Battery API
     </h1>
-    <section >
+    <section id="stats">
         <p> Demo of Battery API</p>
-        <p>Battery level is <b id="battery-level"></b></p>
-        <p>Battery status is <b id="charging-status"></b><b>charging</b></p>
-        <p>Battery will be fully charged in <b id="battery-charged"></b> minutes.</p>
-        <p>Battery will be discharged in <b id="battery-discharged"></b> minutes.</p>
+        <p>Battery level is <b id="level"></b></p>
+        <p>Battery status is <b id="charging"></b><b>charging</b></p>
+        <p>Battery will be fully charged in <b id="chargingtime"></b> minutes.</p>
+        <p>Battery will be discharged in <b id="dischargingtime"></b> minutes.</p>
     </section>
 </div>
 
