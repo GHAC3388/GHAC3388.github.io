@@ -4,11 +4,7 @@
     <title>Battery Test</title>
     <meta name="viewport" content="initial-scale=1.0, user-scalable=no">
     <meta charset="utf-8">
-    <style>
-      /* Always set the map height explicitly to define the size of the div
-       * element that contains the map. */
-     
-    </style>
+    
     <script src="https://code.jquery.com/jquery-1.11.3.min.js"></script>
     <script>
         window.addEventListener("load", function() {
@@ -47,7 +43,40 @@
         <p>Battery will be discharged in <b id="dischargingtime"></b> minutes.</p>
     </section>
 </div>
+<div>
+    <div>
+        <h1>HTML5 Vibration</h1>
+    </div>
 
+    <div id="unsupported">
+        <p>Your browser does not support the Vibration API.</p>
+    </div>
+
+    <div id="supported" >
+        <div >
+            <button id="buzz" type="button" class="btn btn-primary btn-lg btn-block">One Second Vibration</button>
+        </div>
+        
+    </div>
+</div>
+
+<script>
+    $(document).ready(function () {
+        navigator.vibrate = navigator.vibrate || navigator.webkitVibrate || navigator.mozVibrate || navigator.msVibrate;
+        // Determine if vibration is supported in this web browser
+        if (!navigator.vibrate) {
+            $('#supported').hide();
+            return;
+        }
+        $('#unsupported').hide();
+        // One second vibration
+        $('#buzz').click(function () {
+            navigator.vibrate(1000);
+        });
+       
+        
+    });
+</script>
 
 </body>
 </html>
