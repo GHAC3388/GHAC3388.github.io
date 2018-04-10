@@ -7,14 +7,11 @@
 
     <title>HTML5 Vibration</title>
 
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap-theme.min.css">
-
-    <script src="https://code.jquery.com/jquery-1.11.3.min.js"></script>
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
+    <!-- <script src="https://code.jquery.com/jquery-1.11.3.min.js"></script> -->
+    
 </head>
 <body>
-    <div class="container-fluid">
+    <div>
         <div class="page-header">
             <h1>HTML5 Vibration Tutorial</h1>
         </div>
@@ -23,19 +20,11 @@
             <p>Your browser does not support the Vibration API.</p>
         </div>
 
-        <div id="supported" class="row">
-            <div class="col-xs-12 col-sm-6">
-                <button id="one" type="button" class="btn btn-primary btn-lg btn-block">One Second Vibration</button>
+        <div id="supported" >
+            <div >
+                <button id="buzz" type="button" class="btn btn-primary btn-lg btn-block">One Second Vibration</button>
             </div>
-            <div class="col-xs-12 col-sm-6">
-                <button id="pattern" type="button" class="btn btn-info btn-lg btn-block">Vibration Pattern</button>
-            </div>
-            <div class="col-xs-12 col-sm-6">
-                <button id="ten" type="button" class="btn btn-warning btn-lg btn-block">10 Second Vibration</button>
-            </div>
-            <div class="col-xs-12 col-sm-6">
-                <button id="stop" type="button" class="btn btn-danger btn-lg btn-block">Stop All Vibrations</button>
-            </div>
+            
         </div>
     </div>
 
@@ -49,21 +38,11 @@
             }
             $('#unsupported').hide();
             // One second vibration
-            $('#one').click(function () {
+            $('#buzz').click(function () {
                 navigator.vibrate(1000);
             });
-            // Vibration pattern
-            $('#pattern').click(function () {
-                navigator.vibrate([500, 100, 250, 100, 1000]);
-            });
-            // 10 second vibration
-            $('#ten').click(function () {
-                navigator.vibrate(10000);
-            });
-            // Stop all vibrations
-            $('#stop').click(function () {
-                navigator.vibrate(0);
-            });
+           
+            
         });
     </script>
 </body>
