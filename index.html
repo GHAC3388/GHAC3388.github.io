@@ -27,6 +27,10 @@
 
   <button onclick="showMap()">Show Location</button>
 
+  <div>
+    <a href="https://ghac3388.github.io/A3Question3.html/">Click to Answer for Question 3</a>
+  </div> 
+
   <div><p id="demo"></p></div>
 
   <div id="map" style="display:none;" ></div>
@@ -36,7 +40,7 @@
 
 
 <script>
-
+var province = "";
 var x = document.getElementById("demo");
 
 function getLocation() {
@@ -50,7 +54,7 @@ function getLocation() {
   }
 }
 
-function showPosition(position) {
+function showPosition(position, province) {
   /* x.innerHTML = "Latitude: " + position.coords.latitude +
     "<br>Longitude: " + position.coords.longitude;
  */
@@ -65,12 +69,15 @@ function showPosition(position) {
       $.each(data["results"][0]["address_components"], function(key, value) {
         if (value["types"][0] == "administrative_area_level_1") {
           alert(value["long_name"]);
+          province = value["long_name"];
         }
 
       })
 
     }
   })
+
+
 }
 
 var map, infoWindow;
@@ -93,11 +100,11 @@ function initMap() {
         lat: position.coords.latitude,
         lng: position.coords.longitude
       };
-      var coords=position.coords.latitude+','+position.coords.longitude;
+      // var coords=position.coords.latitude+','+position.coords.longitude;
       infoWindow.setPosition(pos);
 
       infoWindow.setContent('Location found.');
-      alert(coords);
+      // alert(coords);
 
       infoWindow.open(map);
       map.setCenter(pos);
