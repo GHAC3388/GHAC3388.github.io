@@ -1,39 +1,16 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>Battery Test</title>
+    <title>Battery and Vibration Test</title>
     <meta name="viewport" content="initial-scale=1.0, user-scalable=no">
     <meta charset="utf-8">
     
     <script src="https://code.jquery.com/jquery-1.11.3.min.js"></script>
-    <script>
-        window.addEventListener("load", function() {
-          var battery = navigator.battery || navigator.mozBattery;
-    
-          function displayBatteryStats() {
-            document.getElementById("charging").textContent = (battery.charging) ? "charging" : "not charging";
-            document.getElementById("chargingtime").textContent = battery.chargingTime;
-            document.getElementById("dischargingtime").textContent = battery.dischargingTime;
-            document.getElementById("level").textContent = battery.level * 100;
-          }
-    
-          if (battery) {
-            displayBatteryStats();
-            battery.addEventListener("chargingchange", displayBatteryStats, false);
-            battery.addEventListener("chargingtimechange", displayBatteryStats, false);
-            battery.addEventListener("dischargingtimechange", displayBatteryStats, false);
-            battery.addEventListener("levelchange", displayBatteryStats, false);
-          } else {
-            document.getElementById("stats").textContent = "Sorry, your browser does not support the Battery Status API";
-          }
-        }, false);
-      </script>
   </head>
-<body>
+ 
 <div>
     <h1>
-
-        Battery API
+        Battery Status API
     </h1>
     <section id="stats">
         <p> Demo of Battery API</p>
@@ -43,9 +20,33 @@
         <p>Battery will be discharged in <b id="dischargingtime"></b> minutes.</p>
     </section>
 </div>
+
+<script>
+    window.addEventListener("load", function() {
+      var battery = navigator.battery || navigator.mozBattery;
+
+      function displayBatteryStats() {
+        document.getElementById("charging").textContent = (battery.charging) ? "charging" : "not charging";
+        document.getElementById("chargingtime").textContent = battery.chargingTime;
+        document.getElementById("dischargingtime").textContent = battery.dischargingTime;
+        document.getElementById("level").textContent = battery.level * 100;
+      }
+
+      if (battery) {
+        displayBatteryStats();
+        battery.addEventListener("chargingchange", displayBatteryStats, false);
+        battery.addEventListener("chargingtimechange", displayBatteryStats, false);
+        battery.addEventListener("dischargingtimechange", displayBatteryStats, false);
+        battery.addEventListener("levelchange", displayBatteryStats, false);
+      } else {
+        document.getElementById("stats").textContent = "Sorry, your browser does not support the Battery Status API";
+      }
+    }, false);
+</script>
+
 <div>
     <div>
-        <h1>HTML5 Vibration</h1>
+        <h1>HTML5 Vibration API</h1>
     </div>
 
     <div id="unsupported">
@@ -72,9 +73,7 @@
         // One second vibration
         $('#buzz').click(function () {
             navigator.vibrate(1000);
-        });
-       
-        
+        });  
     });
 </script>
 
