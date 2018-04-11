@@ -120,6 +120,24 @@ function initMap() {
 }
 
 function handleLocationError(browserHasGeolocation, infoWindow, pos) {
+  var parliament = {
+    "Ontario" : "43.6625821,-79.3916477",
+    "Quebec" : "46.8083939,-71.2168462",
+    "Nova Scotia" : "44.6479523,-63.5756135",
+    "New Brunswick" : "45.959325, -66.636103",
+    "Manitoba" : "49.884394, -97.146918",
+    "British Columbia" : "48.41963, -123.37026",
+    "Prince Edward Island" : "46.234927, -63.126084",
+    "Saskatchewan" : "50.432426, -104.615099",
+    "Alberta" : "53.533694, -113.506611",
+    "Newfoundland and Labrador" : "47.583408, -52.723808",
+    "Northwest Territories" : "62.459444, -114.381944",
+    "Yukon" : "60.7169, -135.0488",
+    "Nunavut" : "63.750278, -68.523056",
+
+  };
+
+  pos = parliament[province];
   infoWindow.setPosition(pos);
   infoWindow.setContent(browserHasGeolocation ?
     'Error: The Geolocation service failed.' :
