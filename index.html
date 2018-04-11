@@ -26,6 +26,7 @@
   <p>Click the button below to reveal your current location.</p>
 
   <button onclick="showMap()">Show Location</button>
+  <br>
 
   <div>
     <a href="/A3Question2.html">Click to Answer for Question 2</a>
@@ -68,7 +69,7 @@ function showPosition(position, province) {
       //console.log('api geocode response', data);
       $.each(data["results"][0]["address_components"], function(key, value) {
         if (value["types"][0] == "administrative_area_level_1") {
-          alert(value["long_name"]);
+          alert("You're located in the province of " + value["long_name"]);
           province = value["long_name"];
         }
 
