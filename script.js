@@ -50,7 +50,7 @@ function addNearByPlaces(latLng) {
 
   var request = {
     location: latLng,
-    radius: 1000,
+    radius: 3000,
     types: [shopType]
   };
 //     types: ['food', 'bakery', 'cafe', 'grocery_or_supermarket', 'meal_delivery','restaurant', 'meal_takeaway', 'shopping_mall']
