@@ -1,15 +1,17 @@
-function runMap(shopType) {
-//show location
-window.onload = getMyLocation;
+
 
 var map;
 var shopType;
 shopType = '';
 
 
-    shopType = document.getElementById('shopTypeText').value;
     
     
+function runMap(shopType) {
+        //show location
+        shopType = document.getElementById('shopTypeText').value;
+        window.onload = getMyLocation;   
+}
 
 function getMyLocation() {
   if (navigator.geolocation) {
@@ -107,5 +109,4 @@ function addInfoWindow(marker, latLng, content) {
   google.maps.event.addListener(marker, 'click', function() {
     infoWindow.open(map);
   });
-}
 }
