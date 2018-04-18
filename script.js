@@ -18,7 +18,7 @@ function getMyLocation() {
 }
 
 function runMap() {
-    displayLocation(position);
+    displayLocation();
 }
 
 //This function is inokved asynchronously by the HTML5 geolocation API.
