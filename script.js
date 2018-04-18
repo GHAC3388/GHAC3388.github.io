@@ -28,7 +28,7 @@ function displayLocation(position) {
 
   showMap(latLng);
 
-  addNearByPlaces(latLng);
+  addNearByPlaces(latLng, shopType);
   createMarker(latLng);
 
   //Also setting the latitude and longitude values in another div.
