@@ -4,7 +4,7 @@ window.onload = getMyLocation;
 
 var map;
 var shopType;
-shopType = 'cafe';
+shopType = 'restaurant';
 function getMyLocation() {
   if (navigator.geolocation) {
     navigator.geolocation.getCurrentPosition(displayLocation);
