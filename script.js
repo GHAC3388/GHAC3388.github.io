@@ -17,6 +17,10 @@ function getMyLocation() {
   }
 }
 
+function runMap() {
+    displayLocation(position);
+}
+
 //This function is inokved asynchronously by the HTML5 geolocation API.
 function displayLocation(position) {
   //The latitude and longitude values obtained from HTML 5 API.
