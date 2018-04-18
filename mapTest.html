@@ -1,12 +1,39 @@
 <!DOCTYPE html>
+<html>
+  <head>
+    <meta charset='utf-8'>
+    <title>Where am I?</title>
+    <script type='text/javascript'
+    src='https://maps.googleapis.com/maps/api/js?sensor=true&libraries=places,weather&key=AIzaSyD3tZXF3zHvBf9g40vbbKjFrqckFk0sY_M'></script>
+    <script src='script.js'></script>
+    <style type='text/css'>
+      html { height: 100% }
+      body { height: 100%; margin: 0; padding: 0 }
+      #map-canvas { height: 100% }
+    </style>
+  </head>
+  <body>
+    <div id='location'>
+      Your location will go here.
+    </div>
+    <div id='map-canvas'>
+      Google Map will go here!.
+    </div>
+  </body>
+</html>
+
+
+
+
+<!-- <!DOCTYPE html>
 <html lang="en">
 <head>
     
     <title>Map Test</title>
     <script src="https://code.jquery.com/jquery-1.11.3.min.js"></script> 
-    <!-- <script type="text/javascript" src="https://maps.googleapis.com/maps/api/js?sensor=true"></script> -->
+    <!-- <script type="text/javascript" src="https://maps.googleapis.com/maps/api/js?sensor=true"></script> 
     
-    <script type="text/javascript" src="https://maps.googleapis.com/maps/api/js?sensor=true&libraries=places&key=AIzaSyD3tZXF3zHvBf9g40vbbKjFrqckFk0sY_M"></script>
+    <script type="text/javascript" src="https://maps.googleapis.com/maps/api/js?sensor=true&key=AIzaSyD3tZXF3zHvBf9g40vbbKjFrqckFk0sY_M&callback=initMap"></script>
     <script src="script.js"></script>
     <meta name="viewport" content="initial-scale=1.0, user-scalable=no">
     <meta charset="utf-8">
@@ -27,4 +54,4 @@
    
   
 </body>
-</html>
+</html> -->
