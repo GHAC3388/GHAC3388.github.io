@@ -2,18 +2,13 @@
 
 var map;
 var shopType;
-shopType = '';
+//shopType = '';   
+window.onload = getMyLocation;      
 
-
-    
-    
-function runMap(shopType) {
-        //show location
-        shopType = document.getElementById('shopTypeText').value;
-        window.onload = getMyLocation;   
-}
 
 function getMyLocation() {
+    //show location
+    shopType = document.getElementById('shopTypeText').value;
   if (navigator.geolocation) {
     navigator.geolocation.getCurrentPosition(displayLocation);
   } else {
@@ -52,7 +47,7 @@ function showMap(latLng) {
   map = new google.maps.Map(document.getElementById('map-canvas'), mapOptions);
 }
 
-function addNearByPlaces(latLng) {
+function addNearByPlaces(latLng, shopType) {
 
   var nearByService = new google.maps.places.PlacesService(map);
 
