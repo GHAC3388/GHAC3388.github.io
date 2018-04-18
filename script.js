@@ -49,8 +49,10 @@ function addNearByPlaces(latLng) {
   var request = {
     location: latLng,
     radius: 1000,
-    types: ['food', 'bakery', 'cafe', 'grocery_or_supermarket', 'meal_delivery','restaurant', 'meal_takeaway', 'shopping_mall']
+    types: ['cafe']
   };
+//     types: ['food', 'bakery', 'cafe', 'grocery_or_supermarket', 'meal_delivery','restaurant', 'meal_takeaway', 'shopping_mall']
+//   };
 
   nearByService.nearbySearch(request, handleNearBySearchResults);
 }
