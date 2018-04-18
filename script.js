@@ -3,7 +3,9 @@
 var map;
 var shopType;
 //shopType = '';   
-function runMap() {   
+function runMap() {  
+shopType = document.getElementById('shopTypeText').value;
+console.log(shopType); 
 window.onload = getMyLocation;   
 }
 
@@ -26,7 +28,7 @@ function displayLocation(position) {
   var latLng = new google.maps.LatLng(latitude, longitude);
 //show location
 shopType = document.getElementById('shopTypeText').value;
-alert(shopType);
+console.log(shopType);
   showMap(latLng);
 
   addNearByPlaces(latLng, shopType);
