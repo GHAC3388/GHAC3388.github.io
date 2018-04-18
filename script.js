@@ -1,7 +1,8 @@
 
 
 var map;
-var shopType;
+var shopType = document.getElementById('shopTypeText').value;
+console.log(shopType);
 //shopType = '';   
 
 window.onload = getMyLocation;   
@@ -37,9 +38,7 @@ function displayLocation(position) {
 
 function showMap(latLng, shopType) {
   //Setting up the map options like zoom level, map type.
-  //show location
-shopType = document.getElementById('shopTypeText').value;
-console.log(shopType);
+ 
   var mapOptions = {
     center: latLng,
     zoom: 14,
