@@ -3,8 +3,9 @@
 var map;
 var shopType;
 //shopType = '';   
-window.onload = getMyLocation;      
-
+function runMap() {   
+window.onload = getMyLocation;   
+}
 
 function getMyLocation() {
     //show location
