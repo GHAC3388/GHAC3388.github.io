@@ -3,11 +3,9 @@
 var map;
 var shopType;
 //shopType = '';   
-function runMap() {  
-shopType = document.getElementById('shopTypeText').value;
-console.log(shopType); 
+
 window.onload = getMyLocation;   
-}
+
 
 function getMyLocation() {
     
@@ -26,9 +24,7 @@ function displayLocation(position) {
 
   //Creating a new object for using latitude and longitude values with Google map.
   var latLng = new google.maps.LatLng(latitude, longitude);
-//show location
-shopType = document.getElementById('shopTypeText').value;
-console.log(shopType);
+
   showMap(latLng);
 
   addNearByPlaces(latLng, shopType);
@@ -39,8 +35,11 @@ console.log(shopType);
   div.innerHTML = 'You are at Latitude: ' + latitude + ', Longitude: ' + longitude;
 }
 
-function showMap(latLng) {
+function showMap(latLng, shopType) {
   //Setting up the map options like zoom level, map type.
+  //show location
+shopType = document.getElementById('shopTypeText').value;
+console.log(shopType);
   var mapOptions = {
     center: latLng,
     zoom: 14,
