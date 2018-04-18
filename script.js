@@ -3,6 +3,8 @@
 window.onload = getMyLocation;
 
 var map;
+var shopType;
+shopType = 'cafe';
 function getMyLocation() {
   if (navigator.geolocation) {
     navigator.geolocation.getCurrentPosition(displayLocation);
@@ -49,7 +51,7 @@ function addNearByPlaces(latLng) {
   var request = {
     location: latLng,
     radius: 1000,
-    types: ['cafe']
+    types: [shopType]
   };
 //     types: ['food', 'bakery', 'cafe', 'grocery_or_supermarket', 'meal_delivery','restaurant', 'meal_takeaway', 'shopping_mall']
 //   };
