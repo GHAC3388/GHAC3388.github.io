@@ -1,10 +1,16 @@
-
+function runMap(shopType) {
 //show location
 window.onload = getMyLocation;
 
 var map;
 var shopType;
-shopType = 'restaurant';
+shopType = '';
+
+
+    shopType = document.getElementById('shopTypeText').value;
+    
+    
+
 function getMyLocation() {
   if (navigator.geolocation) {
     navigator.geolocation.getCurrentPosition(displayLocation);
@@ -79,7 +85,8 @@ function createMarker(latLng, placeResult) {
   var marker = new google.maps.Marker(markerOptions);
 
   if (placeResult) {
-    var content = placeResult.name+'<br/>'+placeResult.vicinity+'<br/>'+placeResult.types;
+    var content = placeResult.name+'<br/>'+placeResult.vicinity;  
+    //var content = placeResult.name+'<br/>'+placeResult.vicinity+'<br/>'+placeResult.types;
     addInfoWindow(marker, latLng, content);
   }
   else {
@@ -100,4 +107,5 @@ function addInfoWindow(marker, latLng, content) {
   google.maps.event.addListener(marker, 'click', function() {
     infoWindow.open(map);
   });
+}
 }
