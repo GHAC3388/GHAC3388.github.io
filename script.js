@@ -34,7 +34,7 @@ function showMap(latLng) {
   //Setting up the map options like zoom level, map type.
   var mapOptions = {
     center: latLng,
-    zoom: 10,
+    zoom: 12,
     mapTypeId: google.maps.MapTypeId.ROADMAP
   };
 
