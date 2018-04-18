@@ -8,8 +8,7 @@ window.onload = getMyLocation;
 }
 
 function getMyLocation() {
-    //show location
-    shopType = document.getElementById('shopTypeText').value;
+    
   if (navigator.geolocation) {
     navigator.geolocation.getCurrentPosition(displayLocation);
   } else {
@@ -25,7 +24,9 @@ function displayLocation(position) {
 
   //Creating a new object for using latitude and longitude values with Google map.
   var latLng = new google.maps.LatLng(latitude, longitude);
-
+//show location
+shopType = document.getElementById('shopTypeText').value;
+alert(shopType);
   showMap(latLng);
 
   addNearByPlaces(latLng, shopType);
@@ -49,7 +50,7 @@ function showMap(latLng) {
 }
 
 function addNearByPlaces(latLng, shopType) {
-
+ 
   var nearByService = new google.maps.places.PlacesService(map);
 
   var request = {
