@@ -40,6 +40,7 @@ function showMap(latLng) {
   var mapOptions = {
     center: latLng,
     zoom: 14,
+    marker: blue,
     mapTypeId: google.maps.MapTypeId.ROADMAP
   };
 
