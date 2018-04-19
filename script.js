@@ -40,7 +40,6 @@ function showMap(latLng) {
   var mapOptions = {
     center: latLng,
     zoom: 14,
-    marker: blue,
     mapTypeId: google.maps.MapTypeId.ROADMAP
   };
 
@@ -76,6 +75,7 @@ function createMarker(latLng, placeResult) {
   var markerOptions = {
     position: latLng,
     map: map,
+    marker: blue,
     animation: google.maps.Animation.DROP,
     clickable: true
   }
