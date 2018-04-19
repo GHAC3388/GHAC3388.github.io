@@ -84,16 +84,12 @@ p {
   font-size: 30px;
 }
 
-#map-canvas {
-  height: 600px;
-  padding: 50px;
-  border: 5px solid black;
-}
+
 
 #input-section {
   border: 1px solid black;
   background-color: blue;
-  padding: 10px 50px 30px;
+  padding: 10px 30px 30px;
   
 }
 
@@ -101,9 +97,14 @@ p {
 #location {
   border: 1px solid black;
   padding: 5px;
+  
 }
 
-
+#map-canvas {
+  height: 95%; 
+  /* padding: 50px; */
+  border: 5px solid rgb(245, 47, 185);
+}
 
 footer {
   background-color: rgb(57, 206, 57);
