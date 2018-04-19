@@ -5,7 +5,7 @@ var shopType;
 shopType = '';   
 var proximity;
  
-function check() {
+function check(shopType) {
     var whichPlace = document.getElementsByName('place');
     var len = whichPlace.length;
     for(i=0;i<len;i++) {
