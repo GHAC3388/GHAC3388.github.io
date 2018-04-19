@@ -1,0 +1,24 @@
+html {
+    height: 100%;
+  }
+  
+  body {
+    height: 100%;
+    padding: 0;
+    margin: 0;
+  }
+  
+header {
+    height: 100px;
+    background-color: rgb(57, 206, 57);
+    padding: 20px;
+    
+}
+
+h1 {
+  color: white;
+}
+
+  #map-canvas {
+    height: 800px;
+  }
