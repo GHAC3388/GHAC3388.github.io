@@ -3,14 +3,12 @@
 var map;
 var shopType; 
 shopType = '';   
-//shopType = document.getElementById('shopTypeText').value;
-
 var proximity;
-//window.onload = getMyLocation;   
+ 
 //update html with lat and lng values
 function getMyLocation(shopType,proximity) {
     shopType = document.getElementById('shopTypeText').value;
-    proximity = document.getElementById('proximity').value * 1000;
+    proximity = parseInt(document.getElementById('proximity').value) * 1000;
   if (navigator.geolocation) {
     navigator.geolocation.getCurrentPosition(displayLocation);
   } else {
@@ -28,7 +26,8 @@ function displayLocation(position,shopType,proximity) {
   var latLng = new google.maps.LatLng(latitude, longitude);
   //shopType = document.getElementById('shopTypeText').value;
   
-  alert(shopType, proximity);
+  alert(shopType);
+  alert(proximity);
   
   showMap(latLng);
   addNearByPlaces(latLng, shopType, proximity);
