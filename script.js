@@ -7,8 +7,7 @@ var proximity;
  
 //update html with lat and lng values
 function getMyLocation(shopType,proximity) {
-    // shopType = document.getElementById('shopTypeText').value;
-    // proximity = parseInt(document.getElementById('proximity').value) * 1000;
+    
   if (navigator.geolocation) {
     navigator.geolocation.getCurrentPosition(displayLocation);
   } else {
