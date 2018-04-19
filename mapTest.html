@@ -8,17 +8,23 @@
 
   </head>
   <body>
-    <header><h1 style="font-size:60px;" align="center">Places Around Me</h1></header>
-    <div id="input-section">
-        <div><p><h2>Search type of place by proximity</h2></p></div>
+    <div id="header">
+        <header>
+            <p>
+                <h1 style="font-size:60px;" align="center">Places Around Me</h1>
+            </p>
+        </header>
+    </div>
+        <div id="input-section">
+        <div><p><h2 style="font-size:35px;">Search type of place by proximity</h2></p></div>
         <div>
             <p>Select place type:</p>
-            <div id="shopTypeText">
-            <input type="radio" name="place" value="cafe" /> Cafe<br>
-            <input type="radio" name="place" value="bank" /> Bank<br>
-            <input type="radio" name="place" value="restaurant" /> Restaurant<br>
-            <input type="radio" name="place" value="supermarket" /> Supermarket<br>
-            <input type="radio" name="place" value="shopping_mall" /> Shopping Mall<br>
+            <div id="shopTypeText" style="font-size:25px;">
+                <input type="radio" name="place" value="cafe" /> Cafe<br>
+                <input type="radio" name="place" value="bank" /> Bank<br>
+                <input type="radio" name="place" value="restaurant" /> Restaurant<br>
+                <input type="radio" name="place" value="supermarket" /> Supermarket<br>
+                <input type="radio" name="place" value="shopping_mall" /> Shopping Mall<br>
             </div>
             <p>Enter search proximity(1 - 5km):</p>
             <input type="number" id="proximity" name="proximity"> km 
