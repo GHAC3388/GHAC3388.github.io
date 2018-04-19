@@ -9,9 +9,10 @@ html {
   }
   
 header {
-    height: 100px;
+    
     background-color: rgb(57, 206, 57);
     padding: 20px;
+    height: 100px;
     
 }
 
