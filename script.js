@@ -7,8 +7,8 @@ var proximity;
  
 //update html with lat and lng values
 function getMyLocation(shopType,proximity) {
-    shopType = document.getElementById('shopTypeText').value;
-    proximity = parseInt(document.getElementById('proximity').value) * 1000;
+    // shopType = document.getElementById('shopTypeText').value;
+    // proximity = parseInt(document.getElementById('proximity').value) * 1000;
   if (navigator.geolocation) {
     navigator.geolocation.getCurrentPosition(displayLocation);
   } else {
@@ -24,7 +24,8 @@ function displayLocation(position,shopType,proximity) {
 
   //Creating a new object for using latitude and longitude values with Google map.
   var latLng = new google.maps.LatLng(latitude, longitude);
-  //shopType = document.getElementById('shopTypeText').value;
+  shopType = document.getElementById('shopTypeText').value;
+  proximity = parseInt(document.getElementById('proximity').value) * 1000;
   
   alert(shopType);
   alert(proximity);
@@ -60,8 +61,6 @@ function addNearByPlaces(latLng, shopType, proximity) {
     radius: proximity,
     types: [shopType]
   };
-//     types: ['food', 'bakery', 'cafe', 'grocery_or_supermarket', 'meal_delivery','restaurant', 'meal_takeaway', 'shopping_mall']
-//   };
 
   nearByService.nearbySearch(request, handleNearBySearchResults);
 }
