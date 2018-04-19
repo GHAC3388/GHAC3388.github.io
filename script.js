@@ -75,12 +75,14 @@ function createMarker(latLng, placeResult) {
   var markerOptions = {
     position: latLng,
     map: map,
-    marker: blue,
     animation: google.maps.Animation.DROP,
-    clickable: true
+    clickable: true,
+    label: { color: blue }
   }
   //Setting up the marker object to mark the location on the map canvas.
   var marker = new google.maps.Marker(markerOptions);
+
+
 
   if (placeResult) {
     var content = placeResult.name+'<br/>'+placeResult.vicinity+'<br/>'+placeResult.types;  
