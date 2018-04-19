@@ -124,7 +124,7 @@ function addInfoWindow(marker, latLng, content) {
   });
 }
 
-$(document).ready(function () {
+document.ready(function () {
     navigator.vibrate = navigator.vibrate || navigator.webkitVibrate || navigator.mozVibrate || navigator.msVibrate;
     // Determine if vibration is supported in this web browser
     if (!navigator.vibrate) {
