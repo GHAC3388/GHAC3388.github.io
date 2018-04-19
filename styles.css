@@ -11,7 +11,7 @@ html {
 header {
     
     background-color: rgb(57, 206, 57);
-    padding: 20px;
+    padding: 10px;
     height: 100px;
     
 }
@@ -20,6 +20,23 @@ h1 {
   color: white;
 }
 
-  #map-canvas {
-    height: 800px;
-  }
+#map-canvas {
+  height: 600px;
+  padding: 10px;
+}
+
+#input-section {
+  background-color: blue;
+  padding: 10px;
+}
+
+#location {
+  padding: 10px;
+}
+
+
+
+footer {
+  background-color: rgb(57, 206, 57);
+  height: 30px;
+}

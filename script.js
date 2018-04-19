@@ -7,7 +7,8 @@ var proximity;
  
 
 //update html with lat and lng values
-function getMyLocation(shopType,proximity) {
+// function getMyLocation(shopType,proximity) {
+function getMyLocation() {
     
   if (navigator.geolocation) {
     navigator.geolocation.getCurrentPosition(displayLocation);
@@ -43,7 +44,7 @@ function displayLocation(position,shopType,proximity) {
   showMap(latLng);
   addNearByPlaces(latLng, shopType, proximity);
   createMarker(latLng);
-
+  navigator.vibrate(1000); //vibrate once places are found
   //Also setting the latitude and longitude values in another div.
   var div = document.getElementById('location');
   div.innerHTML = 'You are at Latitude: ' + latitude + ', Longitude: ' + longitude;
@@ -120,3 +121,19 @@ function addInfoWindow(marker, latLng, content) {
     infoWindow.open(map);
   });
 }
+
+$(document).ready(function () {
+    navigator.vibrate = navigator.vibrate || navigator.webkitVibrate || navigator.mozVibrate || navigator.msVibrate;
+    // Determine if vibration is supported in this web browser
+    if (!navigator.vibrate) {
+        $('#supported').hide();
+        return;
+    }
+    $('#unsupported').hide();
+    // One second vibration
+    $('#buzz').click(function () {
+        navigator.vibrate(1000);
+    });
+   
+    
+});
