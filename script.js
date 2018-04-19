@@ -8,8 +8,9 @@ shopType = '';
 var proximity;
 //window.onload = getMyLocation;   
 //update html with lat and lng values
-function getMyLocation(shopType) {
+function getMyLocation(shopType,proximity) {
     shopType = document.getElementById('shopTypeText').value;
+    proximity = document.getElementById('proximity').value * 1000;
   if (navigator.geolocation) {
     navigator.geolocation.getCurrentPosition(displayLocation);
   } else {
@@ -18,7 +19,7 @@ function getMyLocation(shopType) {
 }
 
 //This function is inokved asynchronously by the HTML5 geolocation API.
-function displayLocation(position,shopType) {
+function displayLocation(position,shopType,proximity) {
   //The latitude and longitude values obtained from HTML 5 API.
   var latitude = position.coords.latitude;
   var longitude = position.coords.longitude;
@@ -27,10 +28,10 @@ function displayLocation(position,shopType) {
   var latLng = new google.maps.LatLng(latitude, longitude);
   //shopType = document.getElementById('shopTypeText').value;
   
-  alert(shopType);
+  alert(shopType, proximity);
   
   showMap(latLng);
-  addNearByPlaces(latLng, shopType);
+  addNearByPlaces(latLng, shopType, proximity);
   createMarker(latLng);
 
   //Also setting the latitude and longitude values in another div.
@@ -51,13 +52,13 @@ function showMap(latLng) {
   map = new google.maps.Map(document.getElementById('map-canvas'), mapOptions);
 }
 
-function addNearByPlaces(latLng, shopType) {
+function addNearByPlaces(latLng, shopType, proximity) {
  
   var nearByService = new google.maps.places.PlacesService(map);
 
   var request = {
     location: latLng,
-    radius: 3000,
+    radius: proximity,
     types: [shopType]
   };
 //     types: ['food', 'bakery', 'cafe', 'grocery_or_supermarket', 'meal_delivery','restaurant', 'meal_takeaway', 'shopping_mall']

@@ -12,13 +12,22 @@
   </head>
   <body>
     <header>Header</header>
-    <div>Enter shop type around you:</div>
+    <div><p>Enter shop type around you:</p></div>
     <div>
-        <input type="text" id="shopTypeText" name="ShowMe"/>
-        <button onclick="getMyLocation();">Show me please!</button>
+        <p>Select place type:</p>
+        <form>
+        <input type="radio" id = "shopTypeText" name="cafe" value="cafe" checked> Cafe<br>
+        <input type="radio" id = "shopTypeText" name="bank" value="bank"> Bank<br>
+        <input type="radio" id = "shopTypeText" name="restauant" value="restauant"> Restauant<br>
+        </form>
+        <p>Enter search proximity(1 - 5km):</p>
+        <input type="number" id="proximity" name="proximity"> km 
+        <button onclick="getMyLocation();">Show me!</button>
+    <br>
 
 
     </div>
+<br>
     <div id='location'>
       Your location will go here.
     </div>
@@ -30,6 +39,8 @@
     src='https://maps.googleapis.com/maps/api/js?sensor=true&libraries=places,weather&key=AIzaSyD3tZXF3zHvBf9g40vbbKjFrqckFk0sY_M'></script>
     <script src='script.js'></script>
   
+
+    <footer>Footer</footer>
     </body>
 </html>
 
