@@ -6,12 +6,12 @@ shopType = '';
 var proximity;
  
 function check() {
-    var whichShop = document.getElementsByName("place");
+    var whichPlace = document.getElementsByName('place');
     var len = whichPlace.length;
 
     for(i=0;i<len;i++) {
-        if(whichShop[i].checked) {
-            shopType = whichShop[i].value;
+        if(whichPlace[i].checked) {
+            shopType = whichPlace[i].value;
         }
     }
 }
