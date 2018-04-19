@@ -23,6 +23,7 @@ function displayLocation(position,shopType) {
 
   //Creating a new object for using latitude and longitude values with Google map.
   var latLng = new google.maps.LatLng(latitude, longitude);
+  alert(shopType);
   showMap(latLng);
   addNearByPlaces(latLng, shopType);
   createMarker(latLng);
