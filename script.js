@@ -3,7 +3,9 @@
 var map;
 var shopType; 
 shopType = '';   
-shopType = document.getElementById('shopTypeText').value;
+//shopType = document.getElementById('shopTypeText').value;
+
+var proximity;
 //window.onload = getMyLocation;   
 //update html with lat and lng values
 function getMyLocation(shopType) {
@@ -24,7 +26,9 @@ function displayLocation(position,shopType) {
   //Creating a new object for using latitude and longitude values with Google map.
   var latLng = new google.maps.LatLng(latitude, longitude);
   shopType = document.getElementById('shopTypeText').value;
+  
   alert(shopType);
+  
   showMap(latLng);
   addNearByPlaces(latLng, shopType);
   createMarker(latLng);
@@ -77,7 +81,6 @@ function createMarker(latLng, placeResult) {
     map: map,
     animation: google.maps.Animation.DROP,
     clickable: true,
-    label: { color: blue }
   }
   //Setting up the marker object to mark the location on the map canvas.
   var marker = new google.maps.Marker(markerOptions);
@@ -85,7 +88,7 @@ function createMarker(latLng, placeResult) {
 
 
   if (placeResult) {
-    var content = placeResult.name+'<br/>'+placeResult.vicinity+'<br/>'+placeResult.types;  
+    var content = placeResult.name+'<br/>'+placeResult.vicinity+'<br/>'+placeResult.website;  
     //var content = placeResult.name+'<br/>'+placeResult.vicinity+'<br/>'+placeResult.types;
     addInfoWindow(marker, latLng, content);
   }
