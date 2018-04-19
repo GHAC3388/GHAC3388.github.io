@@ -14,24 +14,14 @@ html {
   border: 5px solid black;
     background-color: rgb(57, 206, 57);
     padding: 0px 0px 20px;
-    height: 100px;
+   
     
     
 }
 
-/* Portrait layout (default) */
-.app {
-  background:url(../img/logo.png) no-repeat center top; /* 170px x 200px */
-  position:absolute;             /* position in the center of the screen */
-  left:50%;
-  top:50%;
-  height:50px;                   /* text area height */
-  width:225px;                   /* text area width */
-  text-align:center;
-  padding:180px 0px 0px 0px;     /* image height is 200px (bottom 20px are overlapped with text) */
-  margin:-115px 0px 0px -112px;  /* offset vertical: half of image height and text area height */
-                                 /* offset horizontal: half of text area width */
-}
+
+
+
 
 /* Landscape layout (with min-width) */
 @media screen and (min-aspect-ratio: 1/1) and (min-width:400px) {
@@ -48,6 +38,7 @@ html {
   float: left;
   padding: 0px;
   height: 600px;
+  
   
 }
 
@@ -68,12 +59,36 @@ html {
 }
 
 
+
+
 /* Clear floats after the columns */
 .row:after {
   content: "";
   display: table;
   clear: both;
+  
 }
+
+/* Portrait layout (default) */
+@media only screen and (orientation: Portrait) {
+  .column.input {
+    width: 100%; 
+  }
+
+  .column.map {
+    width: 100%;
+  }
+
+  
+  }
+@media only screen and (orientation: Landscape) {
+  .column.input {
+    width: 25%;
+  }
+
+  .column.map {
+    width: 70%;
+  }
 
 h1 {
   color: white;
@@ -101,7 +116,7 @@ p {
 }
 
 #map-canvas {
-  height: 95%; 
+  height: 100%; 
   /* padding: 50px; */
   border: 5px solid rgb(245, 47, 185);
 }
