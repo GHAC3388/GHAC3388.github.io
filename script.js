@@ -98,7 +98,7 @@ function createMarker(latLng, placeResult) {
 
 
   if (placeResult) {
-    var content = placeResult.name+'<br/>'+placeResult.vicinity+'<br/>'+placeResult.website;  
+    var content = placeResult.name+'<br/>'+placeResult.vicinity;  
     //var content = placeResult.name+'<br/>'+placeResult.vicinity+'<br/>'+placeResult.types;
     addInfoWindow(marker, latLng, content);
   }
