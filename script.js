@@ -1,15 +1,13 @@
 
 
 var map;
-var shopType = document.getElementById('shopTypeText').value;
-console.log(shopType);
-//shopType = '';   
+var shopType; 
+shopType = '';   
 
-window.onload = getMyLocation;   
-
-
-function getMyLocation() {
-    
+//window.onload = getMyLocation;   
+//update html with lat and lng values
+function getMyLocation(shopType) {
+    shopType = document.getElementById('shopTypeText').value;
   if (navigator.geolocation) {
     navigator.geolocation.getCurrentPosition(displayLocation);
   } else {
@@ -17,21 +15,15 @@ function getMyLocation() {
   }
 }
 
-function runMap() {
-    displayLocation();
-}
-
 //This function is inokved asynchronously by the HTML5 geolocation API.
-function displayLocation(position) {
+function displayLocation(position,shopType) {
   //The latitude and longitude values obtained from HTML 5 API.
   var latitude = position.coords.latitude;
   var longitude = position.coords.longitude;
 
   //Creating a new object for using latitude and longitude values with Google map.
   var latLng = new google.maps.LatLng(latitude, longitude);
-
   showMap(latLng);
-
   addNearByPlaces(latLng, shopType);
   createMarker(latLng);
 
@@ -40,7 +32,7 @@ function displayLocation(position) {
   div.innerHTML = 'You are at Latitude: ' + latitude + ', Longitude: ' + longitude;
 }
 
-function showMap(latLng, shopType) {
+function showMap(latLng) {
   //Setting up the map options like zoom level, map type.
  
   var mapOptions = {
