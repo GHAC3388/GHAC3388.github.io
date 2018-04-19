@@ -25,7 +25,7 @@ function displayLocation(position,shopType) {
 
   //Creating a new object for using latitude and longitude values with Google map.
   var latLng = new google.maps.LatLng(latitude, longitude);
-  shopType = document.getElementById('shopTypeText').value;
+  //shopType = document.getElementById('shopTypeText').value;
   
   alert(shopType);
   
