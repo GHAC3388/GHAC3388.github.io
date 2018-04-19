@@ -3,7 +3,7 @@
 var map;
 var shopType; 
 shopType = '';   
-
+shopType = document.getElementById('shopTypeText').value;
 //window.onload = getMyLocation;   
 //update html with lat and lng values
 function getMyLocation(shopType) {
@@ -23,6 +23,7 @@ function displayLocation(position,shopType) {
 
   //Creating a new object for using latitude and longitude values with Google map.
   var latLng = new google.maps.LatLng(latitude, longitude);
+  shopType = document.getElementById('shopTypeText').value;
   alert(shopType);
   showMap(latLng);
   addNearByPlaces(latLng, shopType);
