@@ -8,10 +8,10 @@ var proximity;
 function check() {
     var whichPlace = document.getElementsByName('place');
     var len = whichPlace.length;
-
     for(i=0;i<len;i++) {
         if(whichPlace[i].checked) {
             shopType = whichPlace[i].value;
+            alert(shopType);
         }
     }
 }
@@ -33,6 +33,7 @@ function displayLocation(position,shopType,proximity) {
 
   //Creating a new object for using latitude and longitude values with Google map.
   var latLng = new google.maps.LatLng(latitude, longitude);
+
   //shopType = document.getElementById('shopTypeText').value;
   proximity = parseInt(document.getElementById('proximity').value) * 1000;
   
