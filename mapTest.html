@@ -15,11 +15,11 @@
     <div><p>Enter shop type around you:</p></div>
     <div>
         <p>Select place type:</p>
-        <form>
-        <input type="radio" id ="shopTypeText" name="place" value="cafe"> Cafe<br>
-        <input type="radio" id ="shopTypeText" name="place" value="bank"> Bank<br>
-        <input type="radio" id ="shopTypeText" name="place" value="restauant"> Restauant<br>
-        </form>
+        <div id="shopTypeText">
+        <input type="radio" name="place" onclick="check();" value="cafe" checked /> Cafe<br>
+        <input type="radio" name="place" onclick="check();" value="bank" /> Bank<br>
+        <input type="radio" name="place" onclick="check();" value="restauant" /> Restauant<br>
+        </div>
         <p>Enter search proximity(1 - 5km):</p>
         <input type="number" id="proximity" name="proximity"> km 
         <button onclick="getMyLocation();">Show me!</button>
