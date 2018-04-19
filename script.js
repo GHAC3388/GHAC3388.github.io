@@ -80,7 +80,7 @@ function createMarker(latLng, placeResult) {
   var marker = new google.maps.Marker(markerOptions);
 
   if (placeResult) {
-    var content = placeResult.name+'<br/>'+placeResult.vicinity;  
+    var content = placeResult.name+'<br/>'+placeResult.vicinity+'<br/>'+placeResult.types;  
     //var content = placeResult.name+'<br/>'+placeResult.vicinity+'<br/>'+placeResult.types;
     addInfoWindow(marker, latLng, content);
   }
