@@ -56,6 +56,8 @@ function showMap(latLng) {
   var mapOptions = {
     center: latLng,
     zoom: 14,
+    maxZoom: 15,
+    minZoom: 13,
     mapTypeId: google.maps.MapTypeId.ROADMAP
   };
 
