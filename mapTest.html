@@ -33,18 +33,20 @@
                 <h2 style="font-size:30px;">Search type of place by proximity</h2>
                     
                         <p>Select place type:</p>
+                    <form id="search-form" action="#">
                         <div id="shopTypeText" style="font-size:25px;">
-                            <input type="radio" name="place" value="cafe" /> Cafe<br>
+                            <input type="radio" name="place" value="cafe" required/> Cafe<br>
                             <input type="radio" name="place" value="bank" /> Bank<br>
                             <input type="radio" name="place" value="restaurant" /> Restaurant<br>
                             <input type="radio" name="place" value="supermarket" /> Supermarket<br>
                             <input type="radio" name="place" value="shopping_mall" /> Shopping Mall<br>
                         </div>
                         <p>Enter search proximity(1 - 5km):</p>
-                        <input type="number" id="proximity" name="proximity" /> km 
+                        <input type="number" id="proximity" name="proximity" min="1" max="5" required/> km 
                         <button onclick="getMyLocation();">Show me!</button>
                     <br>
-                    
+                    </form>
+                    <progress max="100" value="0" id="progress"></progress>
             </div>  
             <div class="column map">
                 <div id='location'>
