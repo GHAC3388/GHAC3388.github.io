@@ -62,7 +62,7 @@ html {
 
 
 /* Portrait layout (default) */
-@media only screen and (orientation: Portrait) {
+@media only screen and (max-width: 400)and (orientation: Portrait) {
   .column.input {
     flex: 100%; 
     height: 400px;
@@ -75,7 +75,7 @@ html {
 
   
   }
-@media only screen and (orientation: Landscape) {
+@media only screen and (min-width: 401) and (orientation: Landscape) {
   .column.input {
     flex: 25%;
     height: 650px;
