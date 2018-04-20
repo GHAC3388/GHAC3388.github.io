@@ -99,7 +99,9 @@ p {
   font-size: 30px;
 }
 
-
+#hide-block {
+  display: block;
+}
 
 
 #input-section {
