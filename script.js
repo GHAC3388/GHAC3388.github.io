@@ -1,40 +1,5 @@
 
 
-//Swipe to reveal input section
-
-var element = document.getElementById('hide-block');
-var showrow = document.getElementById('column-input');
-Hammer(element).on("swipe", function(event) {
-  element.style.display="none";
-  showrow.style.display="block";
-});
-var numValid = 0;
-$("#search-form input[required]").each(function() {
-  
-  if (this.validity.valid) {
-      numValid++;
-  }
-
-});
-
-// Progress update
-var progress = $("#progress"),
-    progressMessage = $("#progressMessage");
-
-// Logic that runs after counting every time
-if (numValid == 0) {
-    progress.attr("value", "0");
-    progressMessage.text("0%");
-}
-if (numValid == 1) {
-    progress.attr("value", "50");
-    progressMessage.text("50%");
-}
-if (numValid == 2) {
-  progress.attr("value", "100");
-  progressMessage.text("100%");
-}
-
 var map;
 var shopType; 
 shopType = '';   
@@ -175,3 +140,43 @@ document.ready(function () {
     
 });
 
+
+
+//Swipe to reveal input section
+
+var element = document.getElementById('hide-block');
+var showrow = document.getElementById('column-input');
+Hammer(element).on("swipe", function(event) {
+  element.style.display="none";
+  showrow.style.display="block";
+});
+
+
+//progress bar
+
+// var numValid = 0;
+// $("#search-form input[required]").each(function() {
+  
+//   if (this.validity.valid) {
+//       numValid++;
+//   }
+
+// });
+
+// // Progress update
+// var progress = $("#progress"),
+//     progressMessage = $("#progressMessage");
+
+// // Logic that runs after counting every time
+// if (numValid == 0) {
+//     progress.attr("value", "0");
+//     progressMessage.text("0%");
+// }
+// if (numValid == 1) {
+//     progress.attr("value", "50");
+//     progressMessage.text("50%");
+// }
+// if (numValid == 2) {
+//   progress.attr("value", "100");
+//   progressMessage.text("100%");
+// }
