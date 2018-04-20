@@ -1,4 +1,12 @@
 
+//Swipe to reveal input section
+
+var element = document.getElementById('hide-block');
+
+Hammer(element).on("swipe", function(event) {
+  element.style.display="none";
+  
+});
 
 var map;
 var shopType; 
