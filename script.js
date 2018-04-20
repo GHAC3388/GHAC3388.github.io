@@ -5,7 +5,8 @@
 var element = document.getElementById('hide-block');
 // var showrow = document.getElementById('column input');
 Hammer(element).on("swipe", function(event) {
-  element.style.backgroundColor="blue";
+  // element.style.backgroundColor="blue";
+  element.style.display="none";
   // showrow.style.display="block";
 });
 
