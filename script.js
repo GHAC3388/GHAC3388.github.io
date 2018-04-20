@@ -1,5 +1,14 @@
 
 
+//Swipe to reveal input section
+
+var element = document.getElementById('hide-block');
+// var showrow = document.getElementById('column input');
+Hammer(element).on("swipe", function(event) {
+  element.style.backgroundColor="blue";
+  // showrow.style.display="block";
+});
+
 var map;
 var shopType; 
 shopType = '';   
@@ -140,11 +149,3 @@ document.ready(function () {
     
 });
 
-//Swipe to reveal input section
-
-var element = document.getElementById('hide-block');
-// var showrow = document.getElementById('column input');
-Hammer(element).on("swipe", function(event) {
-  element.style.display="none";
-  // showrow.style.display="block";
-});
