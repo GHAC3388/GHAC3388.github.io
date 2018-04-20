@@ -4,7 +4,7 @@
 var element = document.getElementById('hide-block');
 
 Hammer(element).on("swipe", function(event) {
-  element.style.display="none";
+  element.style.backgroundColor="blue";
   
 });
 
