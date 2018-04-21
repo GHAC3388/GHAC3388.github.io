@@ -41,11 +41,11 @@
                             <input type="radio" name="place" value="supermarket" /> Supermarket<br>
                             <input type="radio" name="place" value="shopping_mall" /> Shopping Mall<br>
                         </div>
-                        
-                        <p>Select proximity:</p>
+                
                         <div class="slidecontainer">
+                            <p>Proximity: <span id="demo"></span> km</p>
                             <input type="range" min="1" max="5" value="3" class="slider" id="proximity" /> 
-                            <p><span id="demo"></span> km</p>
+                            
                         </div>
                                             
                         <button  style="padding: 12px 28px; border-radius: 4px;" onclick="getMyLocation();" >Show me!</button>
