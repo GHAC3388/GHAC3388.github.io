@@ -12,12 +12,9 @@ html {
   }
   
 #header {
-  /* border: 5px solid black; */
+  border: 5px solid black; 
     background-color: rgb(57, 206, 57);
-    padding: 0px 0px 0px;
-   
-    
-    
+    padding: 0px;
 }
 
 .row {  
@@ -35,7 +32,7 @@ html {
 .column.input {
   flex: 25%;
   /* height: 100%; */
-  /* border: 8px solid black;
+  /*border: 1px solid black;
   background-color: blue; */
   padding-left: 20px;
   padding-bottom: 30px;
@@ -102,7 +99,7 @@ p {
 
 #hide-block {
   display: block;
-  
+  padding: 0px;
 }
 
 
