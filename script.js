@@ -3,7 +3,7 @@
 
 var element = document.getElementById('hide-block');
 
-Hammer(element).on("swipedown", function(event) {
+Hammer(element).on("swipe", function(event) {
   element.style.display="none";
   
 });
