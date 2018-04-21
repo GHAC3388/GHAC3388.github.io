@@ -8,6 +8,15 @@ Hammer(element).on("swipe", function(event) {
   
 });
 
+// slider for proximity
+var slider = document.getElementById("proximity");
+var output = document.getElementById("demo");
+      output.innerHTML = slider.value;
+
+      slider.oninput = function() {
+        output.innerHTML = this.value;
+      }
+
 var map;
 var shopType; 
 shopType = '';   
