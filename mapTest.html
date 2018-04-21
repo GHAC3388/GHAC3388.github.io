@@ -16,8 +16,8 @@
         </header>
     </div>
         <!-- intro block -->
-        <div id="hide-block">
-            <p style="padding: 20px">
+        <div id="hide-block" style="background-color: #A4A4A4;">
+            <p style="padding: 20px; ">
             PAM! (Places Around Me!) allows you to quickly find out information about your surroundings.
 <br>PAM! quickly identifies your current position and allows you to choose Bank, Cafe or Restaurant, etc. within your desired proximity.
 <br>It's fast, easy and accurate. PAM is your ideal day to day companion.
@@ -42,7 +42,7 @@
                             <input type="radio" name="place" value="shopping_mall" /> Shopping Mall<br>
                         </div>
                         <p>Enter search proximity(1 - 5km):</p>
-                        <input type="number" id="proximity" width="10" min="1" max="5" required/> km 
+                        <input type="number" id="proximity" width="20" min="1" max="5" required/> km 
                         
                         <button  onclick="getMyLocation();">Show me!</button>
                     <br>
@@ -51,10 +51,10 @@
             </div>  
             <div class="column map">
                 <div id='location'>
-                Your location will go here.
+                <!-- Your location will go here. -->
                 </div>
                 <div id='map-canvas'>
-                Google Map will go here!.
+                <!-- Google Map will go here!. -->
                 </div>
             </div>
         </div>
