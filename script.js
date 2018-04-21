@@ -48,15 +48,15 @@ function displayLocation(position,shopType,proximity) {
   for(i=0;i<len;i++) {
       if(whichPlace[i].checked) {
           shopType = whichPlace[i].value;
-          alert(shopType);
+          // alert(shopType);
       }
   }
 
   //shopType = document.getElementById('shopTypeText').value;
   proximity = parseInt(document.getElementById('proximity').value) * 1000;
   
-  alert(shopType);
-  alert(proximity);
+  // alert(shopType);
+  // alert(proximity);
   
   showMap(latLng);
   addNearByPlaces(latLng, shopType, proximity);
