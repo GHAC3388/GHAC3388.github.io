@@ -9,7 +9,7 @@ Hammer(element).on("swipe", function(event) {
 });
 
 // slider for proximity
-var slider = document.getElementById("proximity");
+var slider = document.getElementById("proximity-value");
 var output = document.getElementById("demo");
       output.innerHTML = slider.value;
 
