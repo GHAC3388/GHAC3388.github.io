@@ -35,7 +35,7 @@ html {
   /*border: 1px solid black;
   background-color: blue; */
   padding-left: 20px;
-  padding-bottom: 30px;
+  padding-bottom: 60px;
   
 }
 
@@ -43,6 +43,7 @@ html {
 .column.map {
   flex: 70%;
   padding: 15px;
+  border: 5px solid black;
 }
 
 
