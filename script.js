@@ -8,6 +8,8 @@ Hammer(element).on("swipe", function(event) {
   
 });
 
+
+
 // slider for proximity
 var slider = document.getElementById("proximity");
 var output = document.getElementById("demo");
@@ -152,48 +154,5 @@ $(document).ready(function () {
     // One second vibration
     $('#buzz').click(function () {
         navigator.vibrate(1000);
-    });
-   
-    
+    });   
 });
-
-
-
-//Swipe to reveal input section
-
-var element = document.getElementById('hide-block');
-
-Hammer(element).on("swipe", function(event) {
-  element.style.display="none";
-  
-});
-
-
-//progress bar
-
-// var numValid = 0;
-// $("#search-form input[required]").each(function() {
-  
-//   if (this.validity.valid) {
-//       numValid++;
-//   }
-
-// });
-
-// // Progress update
-// var progress = $("#progress"),
-//     progressMessage = $("#progressMessage");
-
-// // Logic that runs after counting every time
-// if (numValid == 0) {
-//     progress.attr("value", "0");
-//     progressMessage.text("0%");
-// }
-// if (numValid == 1) {
-//     progress.attr("value", "50");
-//     progressMessage.text("50%");
-// }
-// if (numValid == 2) {
-//   progress.attr("value", "100");
-//   progressMessage.text("100%");
-// }
